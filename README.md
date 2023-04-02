@@ -29,6 +29,9 @@
   Download the [latest release](https://github.com/loosheng/intellij-vitesse-theme/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+##  SVG Logo Design Document
+[Vitesse Logo Design Document](https://mastergo.com/goto/pDDCTgJo?file=90290510852665)
+
 ## Links
 [vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse)
 
