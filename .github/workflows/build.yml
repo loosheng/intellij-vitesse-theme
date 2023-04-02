@@ -49,7 +49,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: npm i -g pnpm @antfu/ni
+      - run: npm i -g pnpm@7.26.3 @antfu/ni
       - run: nci
       - run: nr build
 
