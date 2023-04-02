@@ -1,18 +1,10 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.loosheng.intellijvitessetheme</id>
-    <name>intellij-vitesse-theme Template</name>
-    <vendor>loosheng</vendor>
+    <name>Vitesse Theme</name>
+    <vendor>LooSheng</vendor>
 
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.loosheng.intellijvitessetheme.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.loosheng.intellijvitessetheme.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
-    </applicationListeners>
 </idea-plugin>
