@@ -1,0 +1,25 @@
+{
+  "name": "intellij-theme-vitesse",
+  "version": "1.0.0",
+  "description": "",
+  "author": "LooSheng",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "build": "esno script/index.ts",
+    "dev": "nodemon --watch src -e ts --exec \"esno script/index.ts\""
+  },
+  "dependencies": {
+    "xmlbuilder": "^15.1.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.38.2",
+    "@antfu/utils": "^0.7.2",
+    "@types/node": "^16",
+    "eslint": "^8.37.0",
+    "esno": "^0.16.3",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.2"
+  }
+}
