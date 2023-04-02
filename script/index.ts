@@ -52,7 +52,7 @@ fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
   const promises = VitesseThemes.flatMap((theme) => {
     const { base, editorThemePath, UIPath } = theme
 
-    const { editorTheme, UITheme } = getTheme({ ...base, editorScheme: editorThemePath.replace('../src/main/resources', '') })
+    const { editorTheme, UITheme } = getTheme({ ...base, editorScheme: editorThemePath.replace('./src/main/resources', '') })
 
     return [
       fs.writeFile(editorThemePath, editorTheme, 'utf-8'),

@@ -1,7 +1,7 @@
 {
   "name": "Vitesse Light Soft",
   "dark": false,
-  "editorScheme": "./src/main/resources/themes/vitesse.light.soft.xml",
+  "editorScheme": "/themes/vitesse.light.soft.xml",
   "author": "LooSheng",
   "ui": {
     "*": {

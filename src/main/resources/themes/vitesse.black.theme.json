@@ -1,7 +1,7 @@
 {
   "name": "Vitesse Black",
   "dark": true,
-  "editorScheme": "./src/main/resources/themes/vitesse.black.xml",
+  "editorScheme": "/themes/vitesse.black.xml",
   "author": "LooSheng",
   "ui": {
     "*": {
