@@ -381,7 +381,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           selectionInactiveForeground: secondaryForeground,
           selectionInactiveBackground: selectionBackgroundInActive,
 
-          focusColor: primer.green[0],
+          focusColor: pick({ light: primer.gray[3], dark: primer.gray[1] }),
 
           infoForeground: vitesse('comment'),
         },
