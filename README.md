@@ -19,28 +19,18 @@ vscode-theme-vitesse</a></h3>
 
 ## Screenshots
 
-<div align="center" style="display:flex;gap:8px;">
-  <div>
-    <img src="./images/light.png"  alt="Vitesse light"/>
-    <div align="center">Vitesse Light</div>
-  </div>
-  <div>
-    <img src="./images/dark.png" alt="Vitesse dark" />
-    <div align="center">Vitesse Dark</div>
-  </div>
+<div align="center">
+  <img width="49%" src="./images/light.png"  alt="Vitesse light"/>
+  <img width="49%" src="./images/dark.png" alt="Vitesse dark" />
 </div>
-
-<div align="center" style="display:flex;gap:8px;">
-  <div>
-    <img src="./images/light.soft.png" alt="Vitesse Light Soft" />
-    <div align="center">Vitesse Light Soft</div>
-  </div>
-  <div>
-    <img src="./images/dark.soft.png" alt="Vitesse Dark Soft" />
-    <div align="center">Vitesse Dark Soft</div>  
-  </div>
+<div align="center">Vitesse Light & Vitesse Dark</div>
+<br />
+<div align="center">
+ <img width="49%" src="./images/light.soft.png" alt="Vitesse Light Soft" />
+ <img width="49%" src="./images/dark.soft.png" alt="Vitesse Dark Soft" />
 </div>
-
+<div align="center">Vitesse Light Soft & Vitesse Dark Soft</div>
+<br />
 <div align="center">
   <img width="50%" src="./images/black.png" />
   <div align="center">Vitesse Black</div>  
