@@ -385,6 +385,10 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
           infoForeground: vitesse('comment'),
         },
+        'Component': {
+          focusedBorderColor: '#00000000',
+          borderColor: pick({ light: primer.gray[3], dark: primer.gray[1] }),
+        },
         'Button': {
           foreground,
           startBackground: background,
@@ -451,11 +455,11 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           currentOverloadBackground: background,
           currentParameterForeground: foreground,
         },
-        'SearchOption': {
-          selectedBackground: selectionBackground,
-          selectedHoveredBackground: selectionBackgroundActive,
-          selectedPressedBackground: selectionBackgroundInActive,
-        },
+        // 'SearchOption': {
+        //   selectedBackground: selectionBackground,
+        //   selectedHoveredBackground: selectionBackgroundActive,
+        //   selectedPressedBackground: selectionBackgroundInActive,
+        // },
         'SpeedSearch': {
           background,
           foreground,
@@ -491,10 +495,10 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           selectionBackground: activeBackground,
           selectionForeground: foreground,
         },
-        'MainMenu': {
-          selectionForeground: foreground,
-          selectionBackground: activeBackground,
-        },
+        // 'MainMenu': {
+        //   selectionForeground: foreground,
+        //   selectionBackground: activeBackground,
+        // },
         'MenuItem': {
           background,
           foreground,
