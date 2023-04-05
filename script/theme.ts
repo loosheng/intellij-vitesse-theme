@@ -97,7 +97,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   colorsElement.ele('option', { name: 'ANNOTATIONS_LAST_COMMIT_COLOR', value: vitesse('comment') })
   colorsElement.ele('option', { name: 'CARET_COLOR', value: pick({ light: '#000000', dark: '#aeafad' }) })
   colorsElement.ele('option', { name: 'CARET_ROW_COLOR', value: activeBackground })
-  colorsElement.ele('option', { name: 'CONSOLE_BACKGROUND_KEY', value: vitesse('background') })
+  colorsElement.ele('option', { name: 'CONSOLE_BACKGROUND_KEY', value: background })
   colorsElement.ele('option', { name: 'DELETED_LINES_COLOR', value: vitesse('red') })
   colorsElement.ele('option', { name: 'DIFF_SEPARATORS_BACKGROUND', value: vitesse('activeBackground') })
   colorsElement.ele('option', { name: 'DOCUMENTATION_COLOR', value: background })
