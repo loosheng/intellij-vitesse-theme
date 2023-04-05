@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "build": "esno script/index.ts",
-    "dev": "nodemon --watch src -e ts --exec \"esno script/index.ts\""
+    "dev": "nodemon --watch script -e ts --exec \"esno script/index.ts\""
   },
   "dependencies": {
     "xmlbuilder": "^15.1.1"
