@@ -460,6 +460,10 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           background,
           foreground,
         },
+        'SearchMatch': {
+          startBackground: pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
+          endBackground: pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
+        },
         'ProgressBar': {
           progressColor: primary,
           indeterminateStartColor: pick({ light: primer.green[1], dark: primer.green[3] }),
