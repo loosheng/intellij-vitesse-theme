@@ -459,6 +459,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
         'SpeedSearch': {
           background,
           foreground,
+          borderColor: border,
         },
         'SearchMatch': {
           startBackground: pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
