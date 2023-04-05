@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.1.0] - 2023-04-05
+
 ### Added
 - add support for `html` and `xml`
 - add support for `punctuation`
@@ -12,7 +14,6 @@
 - add support for `SearchEverywhereTab`
 - add support for `CONSOLE`
 - add support for `SearchMatch`
-
 
 ### Perf
 - optimize `Button`
@@ -25,5 +26,6 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.0.1...v0.1.0
 [0.0.1]: https://github.com/loosheng/intellij-vitesse-theme/commits/v0.0.1
