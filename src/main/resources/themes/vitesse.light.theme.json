@@ -18,8 +18,12 @@
       "selectionForeground": "#393a34",
       "selectionInactiveForeground": "#393a34",
       "selectionInactiveBackground": "#f7f7f7",
-      "focusColor": "#f0fff4",
+      "focusColor": "#d1d5da",
       "infoForeground": "#a0ada0"
+    },
+    "Component": {
+      "focusedBorderColor": "#00000000",
+      "borderColor": "#d1d5da"
     },
     "Button": {
       "foreground": "#393a34",
@@ -87,14 +91,20 @@
       "currentOverloadBackground": "#ffffff",
       "currentParameterForeground": "#393a34"
     },
-    "SearchOption": {
-      "selectedBackground": "#ffffff",
-      "selectedHoveredBackground": "#ffffff",
-      "selectedPressedBackground": "#ffffff"
-    },
     "SpeedSearch": {
       "background": "#ffffff",
-      "foreground": "#393a34"
+      "foreground": "#393a34",
+      "borderColor": "#f0f0f0"
+    },
+    "SearchMatch": {
+      "startBackground": "#e6cc7766",
+      "endBackground": "#e6cc7766"
+    },
+    "SearchEverywhere": {
+      "Tab": {
+        "selectedBackground": "#f7f7f7",
+        "selectedForeground": "#393a34"
+      }
     },
     "ProgressBar": {
       "progressColor": "#1c6b48",
@@ -112,14 +122,19 @@
       "selectionBackground": "#f7f7f7",
       "selectionForeground": "#393a34"
     },
-    "MainMenu": {
-      "selectionForeground": "#393a34",
-      "selectionBackground": "#f7f7f7"
-    },
     "MenuItem": {
       "background": "#ffffff",
       "foreground": "#393a34",
       "selectionBackground": "#22222215"
+    },
+    "CheckBox": {
+      "background": "#ffffff"
+    },
+    "CheckBoxMenuItem": {
+      "background": "#ffffff",
+      "foreground": "#393a34",
+      "selectionBackground": "#f7f7f7",
+      "selectionForeground": "#393a34"
     }
   }
 }

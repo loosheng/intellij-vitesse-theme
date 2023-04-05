@@ -2,38 +2,38 @@
 <scheme name="Vitesse Black" parent_scheme="Darcula" version="1">
   <colors>
     <option name="ADDED_LINES_COLOR" value="#4d9375"/>
-    <option name="GUTTER_BACKGROUND" value="#000"/>
+    <option name="GUTTER_BACKGROUND" value="#000000"/>
     <option name="SELECTION_BACKGROUND" value="#eeeeee15"/>
     <option name="SELECTION_FOREGROUND"/>
     <option name="ANNOTATIONS_COLOR" value="#758575dd"/>
     <option name="ANNOTATIONS_LAST_COMMIT_COLOR" value="#758575dd"/>
     <option name="CARET_COLOR" value="#aeafad"/>
-    <option name="CARET_ROW_COLOR" value="#050505"/>
-    <option name="CONSOLE_BACKGROUND_KEY" value="#121212"/>
+    <option name="CARET_ROW_COLOR" value="#eeeeee15"/>
+    <option name="CONSOLE_BACKGROUND_KEY" value="#000000"/>
     <option name="DELETED_LINES_COLOR" value="#cb7676"/>
     <option name="DIFF_SEPARATORS_BACKGROUND" value="#181818"/>
-    <option name="DOCUMENTATION_COLOR" value="#000"/>
+    <option name="DOCUMENTATION_COLOR" value="#000000"/>
     <option name="DOC_COMMENT_GUIDE" value="#758575dd"/>
     <option name="DOC_COMMENT_LINK" value="#758575dd"/>
     <option name="ERROR_HINT" value="#cb7676"/>
-    <option name="FOLDED_TEXT_BORDER_COLOR" value="#050505"/>
+    <option name="FOLDED_TEXT_BORDER_COLOR" value="#eeeeee15"/>
     <option name="IGNORED_ADDED_LINES_BORDER_COLOR" value="#4d9375"/>
     <option name="IGNORED_DELETED_LINES_BORDER_COLOR" value="#cb7676"/>
     <option name="IGNORED_MODIFIED_LINES_BORDER_COLOR" value="#6394bf"/>
     <option name="INDENT_GUIDE" value="#2f363d"/>
-    <option name="INFORMATION_HINT" value="#000"/>
+    <option name="INFORMATION_HINT" value="#000000"/>
     <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="#4d9375"/>
     <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="#4d9375"/>
     <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="#4d9375"/>
     <option name="LINE_NUMBERS_COLOR" value="#dedcd550"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="#bfbaaa"/>
-    <option name="LOOKUP_COLOR" value="#000"/>
+    <option name="LOOKUP_COLOR" value="#000000"/>
     <option name="METHOD_SEPARATORS_COLOR" value="#586069"/>
     <option name="MODIFIED_LINES_COLOR" value="#6394bf"/>
-    <option name="NOTIFICATION_BACKGROUND" value="#050505"/>
-    <option name="PROMOTION_PANE" value="#050505"/>
+    <option name="NOTIFICATION_BACKGROUND" value="#eeeeee15"/>
+    <option name="PROMOTION_PANE" value="#eeeeee15"/>
     <option name="QUESTION_HINT" value="#e6cc77"/>
-    <option name="RECENT_LOCATIONS_SELECTION" value="#050505"/>
+    <option name="RECENT_LOCATIONS_SELECTION" value="#eeeeee15"/>
     <option name="RIGHT_MARGIN_COLOR" value="#dedcd550"/>
     <option name="SELECTED_INDENT_GUIDE" value="#4d9375"/>
     <option name="ScrollBar.Mac.hoverThumbColor" value="#dedcd550"/>
@@ -51,7 +51,7 @@
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="#dbd7caee"/>
-        <option name="BACKGROUND" value="#000"/>
+        <option name="BACKGROUND" value="#000000"/>
       </value>
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
@@ -133,7 +133,7 @@
     </option>
     <option name="DEFAULT_TAG">
       <value>
-        <option name="BACKGROUND" value="#000"/>
+        <option name="BACKGROUND" value="#000000"/>
       </value>
     </option>
     <option name="DEFAULT_CLASS_NAME">
@@ -194,7 +194,7 @@
     </option>
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
       <value>
-        <option name="BACKGROUND" value="#000"/>
+        <option name="BACKGROUND" value="#000000"/>
       </value>
     </option>
     <option name="DEFAULT_ATTRIBUTE">
