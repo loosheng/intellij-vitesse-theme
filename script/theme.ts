@@ -89,7 +89,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // GUTTER_BACKGROUND 编辑区域左侧行号区域背景色
   colorsElement.ele('option', { name: 'GUTTER_BACKGROUND', value: background })
   // SELECTION_BACKGROUND 选中区域背景色
-  colorsElement.ele('option', { name: 'SELECTION_BACKGROUND', value: selectionBackground })
+  colorsElement.ele('option', { name: 'SELECTION_BACKGROUND', value: activeBackground })
   // SELECTION_FOREGROUND 选中区域前景色
   colorsElement.ele('option', { name: 'SELECTION_FOREGROUND' })
 
