@@ -206,6 +206,21 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   attributesElement.ele('option', { name: 'DEFAULT_DOT' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
+  //   <option name="DEFAULT_COMMA">
+  //   <value>
+  //     <option name="FOREGROUND" value="c42c2c" />
+  //   </value>
+  // </option>
+  const DEFAULT_COMMA = attributesElement.ele('option', { name: 'DEFAULT_COMMA' }).ele('value')
+  DEFAULT_COMMA.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
+
+  //   <option name="DEFAULT_SEMICOLON">
+  //   <value>
+  //     <option name="FOREGROUND" value="c42c2c" />
+  //   </value>
+  // </option>
+  const DEFAULT_SEMICOLON = attributesElement.ele('option', { name: 'DEFAULT_SEMICOLON' }).ele('value')
+  DEFAULT_SEMICOLON.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
 
   // 注释
   //   <option name="DEFAULT_BLOCK_COMMENT">
@@ -234,7 +249,9 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //     <option name="BACKGROUND" value="ff0000" />
   //   </value>
   // </option>
-  attributesElement.ele('option', { name: 'DEFAULT_TAG' }).ele('value').ele('option', { name: 'BACKGROUND', value: background })
+  const DEFAULT_TAG = attributesElement.ele('option', { name: 'DEFAULT_TAG' }).ele('value')
+  DEFAULT_TAG.ele('option', { name: 'BACKGROUND', value: background })
+  DEFAULT_TAG.ele('option', { name: 'FOREGROUND', value: primary })
 
   // <option name="DEFAULT_CLASS_NAME">
   //   <value>
@@ -304,10 +321,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
 
-  /**
-   * @tag <code>Markup<</code>
-   */
-  attributesElement.ele('option', { name: 'DEFAULT_IDENTIFIER' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  attributesElement.ele('option', { name: 'DEFAULT_IDENTIFIER' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
   //   <option name="DEFAULT_ENTITY">
   //   <value>
   //     <option name="FOREGROUND" value="ff0000" />
@@ -324,7 +338,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
 
-  attributesElement.ele('option', { name: 'DEFAULT_INSTANCE_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  attributesElement.ele('option', { name: 'DEFAULT_INSTANCE_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
 
   //   <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
   //   <value>
@@ -356,6 +370,78 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   TEXT_SEARCH_RESULT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: pick({ light: '#e6cc7766', dark: '#e6cc7744' }) })
   // TEXT_SEARCH_RESULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: foreground })
 
+  //   <option name="DEFAULT_INVALID_STRING_ESCAPE">
+  //   <value>
+  //     <option name="FOREGROUND" value="6a8759" />
+  //     <option name="EFFECT_COLOR" value="aa3434" />
+  //     <option name="EFFECT_TYPE" value="2" />
+  //   </value>
+  // </option>
+  const DEFAULT_INVALID_STRING_ESCAPE = attributesElement.ele('option', { name: 'DEFAULT_INVALID_STRING_ESCAPE' }).ele('value')
+  DEFAULT_INVALID_STRING_ESCAPE.ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
+  DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_COLOR', value: vitesse('red') })
+  DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_TYPE', value: '2' })
+
+  //   <option name="BAD_CHARACTER">
+  //   <value>
+  //     <option name="EFFECT_COLOR" value="af3c3c" />
+  //     <option name="EFFECT_TYPE" value="2" />
+  //   </value>
+  // </option>
+  const BAD_CHARACTER = attributesElement.ele('option', { name: 'BAD_CHARACTER' }).ele('value')
+  BAD_CHARACTER.ele('option', { name: 'EFFECT_COLOR', value: vitesse('red') })
+  BAD_CHARACTER.ele('option', { name: 'EFFECT_TYPE', value: '2' })
+
+  //   <option name="DEFAULT_OPERATION_SIGN">
+  //   <value>
+  //     <option name="FOREGROUND" value="c42c2c" />
+  //   </value>
+  // </option>
+  const DEFAULT_OPERATION_SIGN = attributesElement.ele('option', { name: 'DEFAULT_OPERATION_SIGN' }).ele('value')
+  DEFAULT_OPERATION_SIGN.ele('option', { name: 'FOREGROUND', value: vitesse('operator') })
+
+  // <option name="HTML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
+  attributesElement.ele('option', { name: 'HTML_ATTRIBUTE_NAME', baseAttributes: 'DEFAULT_ATTRIBUTE' })
+  // <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING" />
+  attributesElement.ele('option', { name: 'HTML_ATTRIBUTE_VALUE', baseAttributes: 'DEFAULT_STRING' })
+  // <option name="HTML_TAG">
+  //   <value>
+  //     <option name="FOREGROUND" value="959da5" />
+  //     <option name="BACKGROUND" value="222222" />
+  //   </value>
+  // </option>
+  const HTML_TAG = attributesElement.ele('option', { name: 'HTML_TAG' }).ele('value')
+  HTML_TAG.ele('option', { name: 'FOREGROUND', value: primer.gray[5] })
+  HTML_TAG.ele('option', { name: 'BACKGROUND', value: background })
+  // <option name="HTML_TAG_NAME">
+  //   <value>
+  //     <option name="FOREGROUND" value="4d9375" />
+  //   </value>
+  // </option>
+  const HTML_TAG_NAME = attributesElement.ele('option', { name: 'HTML_TAG_NAME' }).ele('value')
+  HTML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
+
+  // <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
+  attributesElement.ele('option', { name: 'XML_ATTRIBUTE_NAME', baseAttributes: 'DEFAULT_ATTRIBUTE' })
+  // <option name="XML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING" />
+  attributesElement.ele('option', { name: 'XML_ATTRIBUTE_VALUE', baseAttributes: 'DEFAULT_STRING' })
+  // <option name="XML_TAG">
+  //   <value>
+  //     <option name="FOREGROUND" value="959da5" />
+  //     <option name="BACKGROUND" value="222222" />
+  //   </value>
+  // </option>
+  const XML_TAG = attributesElement.ele('option', { name: 'XML_TAG' }).ele('value')
+  XML_TAG.ele('option', { name: 'FOREGROUND', value: primer.gray[5] })
+  XML_TAG.ele('option', { name: 'BACKGROUND', value: background })
+  // <option name="XML_TAG_NAME">
+  //   <value>
+  //     <option name="FOREGROUND" value="4d9375" />
+  //   </value>
+  // </option>
+  const XML_TAG_NAME = attributesElement.ele('option', { name: 'XML_TAG_NAME' }).ele('value')
+  XML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
+
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
@@ -381,27 +467,28 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           selectionInactiveForeground: foreground,
           selectionInactiveBackground: activeBackground,
 
-          focusColor: pick({ light: primer.gray[3], dark: primer.gray[1] }),
+          focusColor: vitesse('primary', '80'),
 
           infoForeground: vitesse('comment'),
+
+          primaryText: primary,
         },
         'Component': {
-          focusedBorderColor: '#00000000',
           borderColor: pick({ light: primer.gray[3], dark: primer.gray[1] }),
         },
         'Button': {
           foreground,
-          startBackground: background,
-          endBackground: background,
-          startBorderColor: border,
-          endBorderColor: border,
+          startBackground: activeBackground,
+          endBackground: activeBackground,
+          startBorderColor: activeBackground,
+          endBorderColor: activeBackground,
           focusedBorderColor: border,
           default: {
             foreground: background,
             startBackground: primary,
             endBackground: primary,
-            startBorderColor: border,
-            endBorderColor: border,
+            startBorderColor: primary,
+            endBorderColor: primary,
             focusedBorderColor: border,
           },
         },
@@ -477,13 +564,13 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
         },
         'ProgressBar': {
           progressColor: primary,
-          indeterminateStartColor: pick({ light: primer.green[1], dark: primer.green[3] }),
-          indeterminateEndColor: pick({ light: primer.green[3], dark: primer.green[5] }),
+          indeterminateStartColor: vitesse('primary', '80'),
+          indeterminateEndColor: vitesse('primary', '40'),
           // passedColor: 'Green5',
           // passedEndColor: 'Green8',
           // failedColor: 'Red5',
           // failedEndColor: 'Red8',
-          trackColor: pick({ light: primer.green[2], dark: primer.green[4] }),
+          trackColor: selectionBackground,
         },
         'Panel': {
           foreground,
@@ -499,10 +586,14 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
         //   selectionForeground: foreground,
         //   selectionBackground: activeBackground,
         // },
+        'Menu': {
+          separatorColor: border,
+        },
         'MenuItem': {
           background,
           foreground,
           selectionBackground,
+          selectionForeground: foreground,
         },
         'CheckBox': {
           background,
@@ -513,6 +604,65 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           selectionBackground: activeBackground,
           selectionForeground: foreground,
         },
+        'ColorChooser': {
+          foreground,
+          background,
+        },
+        'ComboBox': {
+          foreground,
+          background,
+          selectionForeground: foreground,
+          selectionBackground: activeBackground,
+          nonEditableBackground: background,
+          modifiedItemForeground: primary,
+          ArrowButton: {
+            background,
+            iconColor: foreground,
+            nonEditableBackground: background,
+          },
+        },
+        'icons': {
+          ColorPalette: {
+            'Actions.Grey': pick({ light: primer.gray[3], dark: primer.gray[1] }),
+            'Actions.Red': vitesse('red'),
+            'Actions.Yellow': vitesse('yellow'),
+            'Actions.Green': vitesse('green'),
+            'Actions.Blue': vitesse('blue'),
+            // 'Actions.GreyInline.Dark': '#9f99bfb3',
+
+            // 'Objects.Grey': '#9790ad',
+            // 'Objects.RedStatus': '#dd3962',
+            // 'Objects.Red': '#c63a5d',
+            // 'Objects.Pink': '#f98b9e',
+            // 'Objects.Yellow': '#caba2d',
+            // 'Objects.Green': '#239e62',
+            // 'Objects.Blue': '#598bff',
+            // 'Objects.Purple': '#af71e0',
+            // 'Objects.BlackText': '#000000ff',
+            // 'Objects.YellowDark': '#988c26',
+            // 'Objects.GreenAndroid': '#78c257',
+
+            [`Checkbox.Background.Default${style === 'dark' ? '.Dark' : ''}`]: background,
+            [`Checkbox.Border.Default${style === 'dark' ? '.Dark' : ''}`]: pick({ light: primer.gray[3], dark: primer.gray[1] }),
+            [`Checkbox.Foreground.Selected${style === 'dark' ? '.Dark' : ''}`]: foreground,
+            [`Checkbox.Focus.Wide${style === 'dark' ? '.Dark' : ''}`]: vitesse('primary', '80'),
+            [`Checkbox.Focus.Thin.Default${style === 'dark' ? '.Dark' : ''}`]: primary,
+            [`Checkbox.Focus.Thin.Selected${style === 'dark' ? '.Dark' : ''}`]: primary,
+            [`Checkbox.Background.Disabled${style === 'dark' ? '.Dark' : ''}`]: vitesse('comment'),
+            [`Checkbox.Border.Disabled${style === 'dark' ? '.Dark' : ''}`]: pick({ light: primer.gray[3], dark: primer.gray[1] }),
+            [`Checkbox.Foreground.Disabled${style === 'dark' ? '.Dark' : ''}`]: foreground,
+            // "Checkbox.Border.Default": "Grey8",
+            // "Checkbox.Background.Selected": "Blue4",
+            // "Checkbox.Border.Selected": "Blue4",
+            // "Checkbox.Focus.Thin.Default": "Grey14",
+            // "Checkbox.Focus.Thin.Selected": "Grey14",
+            // "Checkbox.Focus.Wide": "Blue4",
+            // "Checkbox.Foreground.Disabled": "Grey8",
+            // "Checkbox.Border.Disabled": "Grey11",
+            // "Checkbox.Background.Disabled": "Grey13"
+          },
+        },
+
       },
     },
   }

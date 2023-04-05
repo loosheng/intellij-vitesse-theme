@@ -18,26 +18,26 @@
       "selectionForeground": "#393a34",
       "selectionInactiveForeground": "#393a34",
       "selectionInactiveBackground": "#f7f7f7",
-      "focusColor": "#d1d5da",
-      "infoForeground": "#a0ada0"
+      "focusColor": "#1c6b4880",
+      "infoForeground": "#a0ada0",
+      "primaryText": "#1c6b48"
     },
     "Component": {
-      "focusedBorderColor": "#00000000",
       "borderColor": "#d1d5da"
     },
     "Button": {
       "foreground": "#393a34",
-      "startBackground": "#ffffff",
-      "endBackground": "#ffffff",
-      "startBorderColor": "#f0f0f0",
-      "endBorderColor": "#f0f0f0",
+      "startBackground": "#f7f7f7",
+      "endBackground": "#f7f7f7",
+      "startBorderColor": "#f7f7f7",
+      "endBorderColor": "#f7f7f7",
       "focusedBorderColor": "#f0f0f0",
       "default": {
         "foreground": "#ffffff",
         "startBackground": "#1c6b48",
         "endBackground": "#1c6b48",
-        "startBorderColor": "#f0f0f0",
-        "endBorderColor": "#f0f0f0",
+        "startBorderColor": "#1c6b48",
+        "endBorderColor": "#1c6b48",
         "focusedBorderColor": "#f0f0f0"
       }
     },
@@ -108,9 +108,9 @@
     },
     "ProgressBar": {
       "progressColor": "#1c6b48",
-      "indeterminateStartColor": "#dcffe4",
-      "indeterminateEndColor": "#85e89d",
-      "trackColor": "#bef5cb"
+      "indeterminateStartColor": "#1c6b4880",
+      "indeterminateEndColor": "#1c6b4840",
+      "trackColor": "#22222215"
     },
     "Panel": {
       "foreground": "#393a34",
@@ -122,10 +122,14 @@
       "selectionBackground": "#f7f7f7",
       "selectionForeground": "#393a34"
     },
+    "Menu": {
+      "separatorColor": "#f0f0f0"
+    },
     "MenuItem": {
       "background": "#ffffff",
       "foreground": "#393a34",
-      "selectionBackground": "#22222215"
+      "selectionBackground": "#22222215",
+      "selectionForeground": "#393a34"
     },
     "CheckBox": {
       "background": "#ffffff"
@@ -135,6 +139,41 @@
       "foreground": "#393a34",
       "selectionBackground": "#f7f7f7",
       "selectionForeground": "#393a34"
+    },
+    "ColorChooser": {
+      "foreground": "#393a34",
+      "background": "#ffffff"
+    },
+    "ComboBox": {
+      "foreground": "#393a34",
+      "background": "#ffffff",
+      "selectionForeground": "#393a34",
+      "selectionBackground": "#f7f7f7",
+      "nonEditableBackground": "#ffffff",
+      "modifiedItemForeground": "#1c6b48",
+      "ArrowButton": {
+        "background": "#ffffff",
+        "iconColor": "#393a34",
+        "nonEditableBackground": "#ffffff"
+      }
+    },
+    "icons": {
+      "ColorPalette": {
+        "Actions.Grey": "#d1d5da",
+        "Actions.Red": "#ab5959",
+        "Actions.Yellow": "#bda437",
+        "Actions.Green": "#1e754f",
+        "Actions.Blue": "#296aa3",
+        "Checkbox.Background.Default": "#ffffff",
+        "Checkbox.Border.Default": "#d1d5da",
+        "Checkbox.Foreground.Selected": "#393a34",
+        "Checkbox.Focus.Wide": "#1c6b4880",
+        "Checkbox.Focus.Thin.Default": "#1c6b48",
+        "Checkbox.Focus.Thin.Selected": "#1c6b48",
+        "Checkbox.Background.Disabled": "#a0ada0",
+        "Checkbox.Border.Disabled": "#d1d5da",
+        "Checkbox.Foreground.Disabled": "#393a34"
+      }
     }
   }
 }
