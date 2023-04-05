@@ -378,8 +378,8 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
           selectionBackground: activeBackground,
           selectionForeground: foreground,
-          selectionInactiveForeground: secondaryForeground,
-          selectionInactiveBackground: selectionBackgroundInActive,
+          selectionInactiveForeground: foreground,
+          selectionInactiveBackground: activeBackground,
 
           focusColor: pick({ light: primer.gray[3], dark: primer.gray[1] }),
 
