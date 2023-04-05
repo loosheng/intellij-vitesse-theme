@@ -4,6 +4,22 @@
 
 ## [Unreleased]
 
+### Added
+- add support for `html` and `xml`
+- add support for `punctuation`
+- add support for `operator`
+- add support for `ComboBox`
+- add support for `SearchEverywhereTab`
+- add support for `CONSOLE`
+- add support for `SearchMatch`
+
+
+### Perf
+- optimize `Button`
+- optimize `ProgressBar`
+- optimize `focusColor`
+- optimize dark `selectionColor`
+
 ## [0.0.1] - 2023-04-03
 
 ### Added
