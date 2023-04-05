@@ -500,7 +500,15 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           foreground,
           selectionBackground,
         },
-
+        'CheckBox': {
+          background,
+        },
+        'CheckBoxMenuItem': {
+          background,
+          foreground,
+          selectionBackground: activeBackground,
+          selectionForeground: foreground,
+        },
       },
     },
   }
