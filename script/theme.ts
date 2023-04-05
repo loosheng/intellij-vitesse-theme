@@ -20,12 +20,12 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
     ? vitesse('lowBorder')
     : vitesse('border')
   const background = black
-    ? '#000'
+    ? '#000000'
     : soft
       ? vitesse('lowBackground')
       : vitesse('background')
   const activeBackground = black
-    ? '#050505'
+    ? '#eeeeee15'
     : soft
       ? vitesse('lowActiveBackground')
       : vitesse('activeBackground')
@@ -378,8 +378,8 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
           selectionBackground: activeBackground,
           selectionForeground: foreground,
-          selectionInactiveForeground: foreground,
-          selectionInactiveBackground: activeBackground,
+          selectionInactiveForeground: secondaryForeground,
+          selectionInactiveBackground: selectionBackgroundInActive,
 
           focusColor: primer.green[0],
 
@@ -452,9 +452,9 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           currentParameterForeground: foreground,
         },
         'SearchOption': {
-          selectedBackground: background,
-          selectedHoveredBackground: background,
-          selectedPressedBackground: background,
+          selectedBackground: selectionBackground,
+          selectedHoveredBackground: selectionBackgroundActive,
+          selectedPressedBackground: selectionBackgroundInActive,
         },
         'SpeedSearch': {
           background,
