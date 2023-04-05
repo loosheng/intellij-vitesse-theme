@@ -14,9 +14,13 @@
 <!-- Plugin description -->
 <h3 align="center">❗❗❗In the early stage of porting</h3>
 <h3 align="center"> Ported from antfu's <a href="https://github.com/antfu/vscode-theme-vitesse">vscode-theme-vitesse</a></h3>
+<!-- Plugin description end -->
+
+## screenshots
+
 <p align="center"><img src="https://raw.githubusercontent.com/loosheng/intellij-vitesse-theme/main/images/light.png" /></p>
 <p align="center"><img src="https://raw.githubusercontent.com/loosheng/intellij-vitesse-theme/main/images/dark.png" /></p>
-<!-- Plugin description end -->
+
 
 ## Installation
 
