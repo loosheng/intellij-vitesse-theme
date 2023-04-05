@@ -465,6 +465,12 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           startBackground: pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
           endBackground: pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
         },
+        'SearchEverywhere': {
+          Tab: {
+            selectedBackground: activeBackground,
+            selectedForeground: foreground,
+          },
+        },
         'ProgressBar': {
           progressColor: primary,
           indeterminateStartColor: pick({ light: primer.green[1], dark: primer.green[3] }),
