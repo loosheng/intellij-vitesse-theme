@@ -303,7 +303,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //     <option name="FOREGROUND" value="dcdcaa" />
   //   </value>
   // </option>
-  attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_CALL' }).ele('value').ele('option', { name: 'FOREGROUND', value: primary })
+  attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_CALL' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('function') })
   attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_DECLARATION' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('function') })
 
   // 数字
