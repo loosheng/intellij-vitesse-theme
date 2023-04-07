@@ -346,6 +346,13 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // </option>
 
   attributesElement.ele('option', { name: 'DEFAULT_INSTANCE_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
+  //   <option name="DEFAULT_INTERFACE_NAME">
+  //   <value>
+  //     <option name="FOREGROUND" value="6440ba" />
+  //   </value>
+  // </option>
+  const DEFAULT_INTERFACE_NAME = attributesElement.ele('option', { name: 'DEFAULT_INTERFACE_NAME' }).ele('value')
+  DEFAULT_INTERFACE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('interface') })
 
   //   <option name="DEFAULT_STATIC_FIELD">
   //   <value>
@@ -463,13 +470,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   attributesElement.ele('option', { name: 'JS.GLOBAL_FUNCTION', baseAttributes: 'DEFAULT_FUNCTION_DECLARATION' })
   attributesElement.ele('option', { name: 'JS.GLOBAL_VARIABLE', baseAttributes: 'DEFAULT_GLOBAL_VARIABLE' })
   attributesElement.ele('option', { name: 'JS.LOCAL_VARIABLE', baseAttributes: 'DEFAULT_LOCAL_VARIABLE' })
-  //   <option name="DEFAULT_INTERFACE_NAME">
-  //   <value>
-  //     <option name="FOREGROUND" value="6440ba" />
-  //   </value>
-  // </option>
-  const DEFAULT_INTERFACE_NAME = attributesElement.ele('option', { name: 'DEFAULT_INTERFACE_NAME' }).ele('value')
-  DEFAULT_INTERFACE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('interface') })
+
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
