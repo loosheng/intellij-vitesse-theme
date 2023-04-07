@@ -174,33 +174,6 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // </option>
   const DEFAULT_METADATA = attributesElement.ele('option', { name: 'DEFAULT_METADATA' }).ele('value')
   DEFAULT_METADATA.ele('option', { name: 'FOREGROUND', value: vitesse('decorator') })
-  // CSS.IMPORTANT : 表示 CSS !important 属性
-  //   <option name="CSS.IMPORTANT">
-  //   <value>
-  //     <option name="FOREGROUND" value="CF8E6D" />
-  //     <option name="FONT_TYPE" value="1" />
-  //   </value>
-  // </option>
-
-  const CSS_IMPORTANT = attributesElement.ele('option', { name: 'CSS.IMPORTANT' }).ele('value')
-  CSS_IMPORTANT.ele('option', { name: 'FOREGROUND', value: primary })
-  CSS_IMPORTANT.ele('option', { name: 'FONT_TYPE', value: '1' })
-
-  // 编辑器中代码镜头（Code Lens）边框颜色
-  // <option name="CODE_LENS_BORDER_COLOR">
-  // <value>
-  //   <option name="EFFECT_COLOR" value="868a91" />
-  // </value>
-  // </option
-  attributesElement.ele('option', { name: 'CODE_LENS_BORDER_COLOR' }).ele('value').ele('option', { name: 'EFFECT_COLOR', value: border })
-
-  // CSS.URL : 表示CSS URL的属性
-  //   <option name="CSS.URL">
-  //   <value>
-  //     <option name="FOREGROUND" value="5c92ff" />
-  //   </value>
-  // </option>
-  attributesElement.ele('option', { name: 'CSS.URL' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('orange') })
 
   // <option name="CUSTOM_STRING_ATTRIBUTES" baseAttributes="DEFAULT_STRING" />
   attributesElement.ele('option', { name: 'CUSTOM_STRING_ATTRIBUTES' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('string') })
@@ -508,6 +481,40 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // </option>
   const JS_DOC_TYPE = attributesElement.ele('option', { name: 'JS.DOC_TYPE' }).ele('value')
   JS_DOC_TYPE.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
+
+  // CSS.IMPORTANT : 表示 CSS !important 属性
+  //   <option name="CSS.IMPORTANT">
+  //   <value>
+  //     <option name="FOREGROUND" value="CF8E6D" />
+  //     <option name="FONT_TYPE" value="1" />
+  //   </value>
+  // </option>
+
+  const CSS_IMPORTANT = attributesElement.ele('option', { name: 'CSS.IMPORTANT' }).ele('value')
+  CSS_IMPORTANT.ele('option', { name: 'FOREGROUND', value: primary })
+  CSS_IMPORTANT.ele('option', { name: 'FONT_TYPE', value: '1' })
+
+  // 编辑器中代码镜头（Code Lens）边框颜色
+  // <option name="CODE_LENS_BORDER_COLOR">
+  // <value>
+  //   <option name="EFFECT_COLOR" value="868a91" />
+  // </value>
+  // </option
+  attributesElement.ele('option', { name: 'CODE_LENS_BORDER_COLOR' }).ele('value').ele('option', { name: 'EFFECT_COLOR', value: border })
+
+  // CSS.URL : 表示CSS URL的属性
+  //   <option name="CSS.URL">
+  // <value>
+  //       <option name="FOREGROUND" value="c26d30" />
+  //       <option name="EFFECT_COLOR" value="c26d30" />
+  //       <option name="EFFECT_TYPE" value="1" />
+  //     </value>
+  // </option>
+  const CSS_URL = attributesElement.ele('option', { name: 'CSS.URL' }).ele('value')
+  CSS_URL.ele('option', { name: 'FOREGROUND', value: vitesse('orange') })
+  CSS_URL.ele('option', { name: 'EFFECT_COLOR', value: vitesse('orange') })
+  CSS_URL.ele('option', { name: 'EFFECT_TYPE', value: '1' })
+
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
