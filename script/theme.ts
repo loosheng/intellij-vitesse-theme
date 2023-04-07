@@ -340,6 +340,15 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
   attributesElement.ele('option', { name: 'DEFAULT_INSTANCE_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
 
+  //   <option name="DEFAULT_STATIC_FIELD">
+  //   <value>
+  //     <option name="FOREGROUND" value="8231af" />
+  //     <option name="FONT_TYPE" value="2" />
+  //   </value>
+  // </option>
+  attributesElement.ele('option', { name: 'DEFAULT_STATIC_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
+  // <option name="DEFAULT_STATIC_METHOD" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
+  attributesElement.ele('option', { name: 'DEFAULT_STATIC_METHOD', baseAttributes: 'DEFAULT_FUNCTION_DECLARATION' })
   //   <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
   //   <value>
   //     <option name="BACKGROUND" value="2b2d30" />
