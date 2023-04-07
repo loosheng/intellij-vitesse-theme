@@ -574,6 +574,36 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const CSS_PSEUDO = attributesElement.ele('option', { name: 'CSS.PSEUDO' }).ele('value')
   CSS_PSEUDO.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
 
+  //   <option name="CSS.BRACES">
+  //   <value>
+  //     <option name="FOREGROUND" value="af1d1d" />
+  //   </value>
+  // </option>
+  // <option name="CSS.BRACKETS">
+  //   <value>
+  //     <option name="FOREGROUND" value="af1d1d" />
+  //   </value>
+  // </option>
+  // </option>
+  //   <option name="CSS.PARENTHESES">
+  //   <value>
+  //     <option name="FOREGROUND" value="af1d1d" />
+  //   </value>
+  // </option>
+  // <option name="CSS.COLON">
+  //   <value>
+  //     <option name="FOREGROUND" value="af1d1d" />
+  //   </value>
+
+  const CSS_BRACES = attributesElement.ele('option', { name: 'CSS.BRACES' }).ele('value')
+  CSS_BRACES.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  const CSS_BRACKETS = attributesElement.ele('option', { name: 'CSS.BRACKETS' }).ele('value')
+  CSS_BRACKETS.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  const CSS_PARENTHS = attributesElement.ele('option', { name: 'CSS.PARENTHESES' }).ele('value')
+  CSS_PARENTHS.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  const CSS_COLON = attributesElement.ele('option', { name: 'CSS.COLON' }).ele('value')
+  CSS_COLON.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
+
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
