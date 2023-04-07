@@ -356,7 +356,6 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
   const DEFAULT_ATTRIBUTE = attributesElement.ele('option', { name: 'DEFAULT_ATTRIBUTE' }).ele('value')
   DEFAULT_ATTRIBUTE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
-  DEFAULT_ATTRIBUTE.ele('option', { name: 'FONT_TYPE', value: '1' })
 
   //   <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
   //   <value>
