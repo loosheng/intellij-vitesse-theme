@@ -251,6 +251,14 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   attributesElement.ele('option', { name: 'DEFAULT_DOC_MARKUP' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
   attributesElement.ele('option', { name: 'DEFAULT_DOC_COMMENT_TAG' }).ele('value').ele('option', { name: 'FOREGROUND', value: primary })
 
+  //   <option name="DEFAULT_DOC_COMMENT_TAG_VALUE">
+  //   <value>
+  //     <option name="FOREGROUND" value="7a5428" />
+  //   </value>
+  // </option>
+  const DEFAULT_DOC_COMMENT_TAG_VALUE = attributesElement.ele('option', { name: 'DEFAULT_DOC_COMMENT_TAG_VALUE' }).ele('value')
+  DEFAULT_DOC_COMMENT_TAG_VALUE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+
   //   <option name="DEFAULT_TAG">
   //   <value>
   //     <option name="BACKGROUND" value="ff0000" />
