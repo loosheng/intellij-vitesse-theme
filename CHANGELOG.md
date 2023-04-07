@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+### Added
+- add support for `CSS`
+### Optimize
+- optimize `JS` keyword,function,variable,bracket,type,module
+- optimize `HTML` Attribute
+
 ## [0.1.0] - 2023-04-05
 
 ### Added
@@ -15,7 +21,7 @@
 - add support for `CONSOLE`
 - add support for `SearchMatch`
 
-### Perf
+### Optimize
 - optimize `Button`
 - optimize `ProgressBar`
 - optimize `focusColor`
