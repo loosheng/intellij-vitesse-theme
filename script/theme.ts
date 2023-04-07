@@ -479,6 +479,28 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   attributesElement.ele('option', { name: 'JS.GLOBAL_VARIABLE', baseAttributes: 'DEFAULT_GLOBAL_VARIABLE' })
   attributesElement.ele('option', { name: 'JS.LOCAL_VARIABLE', baseAttributes: 'DEFAULT_LOCAL_VARIABLE' })
 
+  //   <option name="JS.MODULE_NAME">
+  //   <value>
+  //     <option name="FOREGROUND" value="d7c63e" />
+  //   </value>
+  // </option>
+  // <option name="JS.PRIMITIVE.TYPE">
+  //   <value>
+  //     <option name="FOREGROUND" value="d7c63e" />
+  //   </value>
+  // </option>
+  // <option name="JS.TYPE_ALIAS">
+  //   <value>
+  //     <option name="FOREGROUND" value="d7c63e" />
+  //   </value>
+  // </option>
+  const JS_MODULE_NAME = attributesElement.ele('option', { name: 'JS.MODULE_NAME' }).ele('value')
+  JS_MODULE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('namespace') })
+  const JS_PRIMITIVE_TYPE = attributesElement.ele('option', { name: 'JS.PRIMITIVE.TYPE' }).ele('value')
+  JS_PRIMITIVE_TYPE.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
+  const JS_TYPE_ALIAS = attributesElement.ele('option', { name: 'JS.TYPE_ALIAS' }).ele('value')
+  JS_TYPE_ALIAS.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
+
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
