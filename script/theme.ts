@@ -167,6 +167,13 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   BREAKPOINT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: pick({ light: '#40252b', dark: '#40252b' }) })
   BREAKPOINT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: pick({ light: '#8c5b65', dark: '#8c5b65' }) })
 
+  //   <option name="DEFAULT_METADATA">
+  //   <value>
+  //     <option name="FOREGROUND" value="1633a5" />
+  //   </value>
+  // </option>
+  const DEFAULT_METADATA = attributesElement.ele('option', { name: 'DEFAULT_METADATA' }).ele('value')
+  DEFAULT_METADATA.ele('option', { name: 'FOREGROUND', value: vitesse('decorator') })
   // CSS.IMPORTANT : 表示 CSS !important 属性
   //   <option name="CSS.IMPORTANT">
   //   <value>
