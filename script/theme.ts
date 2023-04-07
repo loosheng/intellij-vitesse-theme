@@ -515,6 +515,43 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   CSS_URL.ele('option', { name: 'EFFECT_COLOR', value: vitesse('orange') })
   CSS_URL.ele('option', { name: 'EFFECT_TYPE', value: '1' })
 
+  //   <option name="CSS.ATTRIBUTE_NAME">
+  //   <value>
+  //     <option name="FOREGROUND" value="31b7c4" />
+  //   </value>
+  // </option>
+  // <option name="CSS.CLASS_NAME">
+  //   <value>
+  //     <option name="FOREGROUND" value="31b7c4" />
+  //   </value>
+  // </option>
+  // <option name="CSS.FUNCTION">
+  //   <value>
+  //     <option name="FOREGROUND" value="31b7c4" />
+  //   </value>
+  // </option>
+  //   <option name="CSS.PROPERTY_NAME">
+  //   <value>
+  //     <option name="FOREGROUND" value="31b7c4" />
+  //     <option name="FONT_TYPE" value="1" />
+  //   </value>
+  // </option>
+  // <option name="CSS.PSEUDO">
+  //   <value>
+  //     <option name="FOREGROUND" value="31b7c4" />
+  //   </value>
+  // </option>
+  const CSS_ATTRIBUTE_NAME = attributesElement.ele('option', { name: 'CSS.ATTRIBUTE_NAME' }).ele('value')
+  CSS_ATTRIBUTE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  const CSS_CLASS_NAME = attributesElement.ele('option', { name: 'CSS.CLASS_NAME' }).ele('value')
+  CSS_CLASS_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  const CSS_FUNCTION = attributesElement.ele('option', { name: 'CSS.FUNCTION' }).ele('value')
+  CSS_FUNCTION.ele('option', { name: 'FOREGROUND', value: vitesse('function') })
+  const CSS_PROPERTY_NAME = attributesElement.ele('option', { name: 'CSS.PROPERTY_NAME' }).ele('value')
+  CSS_PROPERTY_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('property') })
+  const CSS_PSEUDO = attributesElement.ele('option', { name: 'CSS.PSEUDO' }).ele('value')
+  CSS_PSEUDO.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
