@@ -515,6 +515,28 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   CSS_URL.ele('option', { name: 'EFFECT_COLOR', value: vitesse('orange') })
   CSS_URL.ele('option', { name: 'EFFECT_TYPE', value: '1' })
 
+  //   <option name="JS.BRACES">
+  //   <value>
+  //     <option name="FOREGROUND" value="d21e1e" />
+  //   </value>
+  // </option>
+  // <option name="JS.BRACKETS">
+  //   <value>
+  //     <option name="FOREGROUND" value="d21e1e" />
+  //   </value>
+  // </option>
+  // <option name="JS.PARENTHS">
+  //   <value>
+  //     <option name="FOREGROUND" value="d21e1e" />
+  //   </value>
+  // </option>
+  const JS_BRACES = attributesElement.ele('option', { name: 'JS.BRACES' }).ele('value')
+  JS_BRACES.ele('option', { name: 'FOREGROUND', value: primary })
+  const JS_BRACKETS = attributesElement.ele('option', { name: 'JS.BRACKETS' }).ele('value')
+  JS_BRACKETS.ele('option', { name: 'FOREGROUND', value: primary })
+  const JS_PARENTHS = attributesElement.ele('option', { name: 'JS.PARENTHS' }).ele('value')
+  JS_PARENTHS.ele('option', { name: 'FOREGROUND', value: primary })
+
   //   <option name="CSS.ATTRIBUTE_NAME">
   //   <value>
   //     <option name="FOREGROUND" value="31b7c4" />
