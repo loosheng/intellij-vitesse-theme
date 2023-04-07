@@ -501,6 +501,13 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const JS_TYPE_ALIAS = attributesElement.ele('option', { name: 'JS.TYPE_ALIAS' }).ele('value')
   JS_TYPE_ALIAS.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
 
+  //   <option name="JS.DOC_TYPE">
+  //   <value>
+  //     <option name="FOREGROUND" value="cb9557" />
+  //   </value>
+  // </option>
+  const JS_DOC_TYPE = attributesElement.ele('option', { name: 'JS.DOC_TYPE' }).ele('value')
+  JS_DOC_TYPE.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
