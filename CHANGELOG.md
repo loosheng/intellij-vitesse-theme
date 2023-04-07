@@ -4,8 +4,11 @@
 
 ## [Unreleased]
 
+## [0.2.0] - 2023-04-07
+
 ### Added
 - add support for `CSS`
+
 ### Optimize
 - optimize `JS` keyword,function,variable,bracket,type,module
 - optimize `HTML` Attribute
@@ -32,6 +35,7 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.0.1...v0.1.0
 [0.0.1]: https://github.com/loosheng/intellij-vitesse-theme/commits/v0.0.1
