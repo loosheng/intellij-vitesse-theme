@@ -457,6 +457,12 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const XML_TAG_NAME = attributesElement.ele('option', { name: 'XML_TAG_NAME' }).ele('value')
   XML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
 
+  // <option name="JS.GLOBAL_FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
+  // <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
+  // <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
+  attributesElement.ele('option', { name: 'JS.GLOBAL_FUNCTION', baseAttributes: 'DEFAULT_FUNCTION_DECLARATION' })
+  attributesElement.ele('option', { name: 'JS.GLOBAL_VARIABLE', baseAttributes: 'DEFAULT_GLOBAL_VARIABLE' })
+  attributesElement.ele('option', { name: 'JS.LOCAL_VARIABLE', baseAttributes: 'DEFAULT_LOCAL_VARIABLE' })
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
