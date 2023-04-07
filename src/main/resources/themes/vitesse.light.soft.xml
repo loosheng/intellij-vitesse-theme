@@ -85,20 +85,9 @@
         <option name="ERROR_STRIPE_COLOR" value="#8c5b65"/>
       </value>
     </option>
-    <option name="CSS.IMPORTANT">
+    <option name="DEFAULT_METADATA">
       <value>
-        <option name="FOREGROUND" value="#1c6b48"/>
-        <option name="FONT_TYPE" value="1"/>
-      </value>
-    </option>
-    <option name="CODE_LENS_BORDER_COLOR">
-      <value>
-        <option name="EFFECT_COLOR" value="#E7E5DB"/>
-      </value>
-    </option>
-    <option name="CSS.URL">
-      <value>
-        <option name="FOREGROUND" value="#a65e2b"/>
+        <option name="FOREGROUND" value="#bd8f8f"/>
       </value>
     </option>
     <option name="CUSTOM_STRING_ATTRIBUTES">
@@ -141,6 +130,11 @@
         <option name="FOREGROUND" value="#1c6b48"/>
       </value>
     </option>
+    <option name="DEFAULT_DOC_COMMENT_TAG_VALUE">
+      <value>
+        <option name="FOREGROUND" value="#b07d48"/>
+      </value>
+    </option>
     <option name="DEFAULT_TAG">
       <value>
         <option name="BACKGROUND" value="#F1F0E9"/>
@@ -169,7 +163,7 @@
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="#1c6b48"/>
+        <option name="FOREGROUND" value="#59873a"/>
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
@@ -203,6 +197,17 @@
         <option name="FOREGROUND" value="#998418"/>
       </value>
     </option>
+    <option name="DEFAULT_INTERFACE_NAME">
+      <value>
+        <option name="FOREGROUND" value="#2e8f82"/>
+      </value>
+    </option>
+    <option name="DEFAULT_STATIC_FIELD">
+      <value>
+        <option name="FOREGROUND" value="#998418"/>
+      </value>
+    </option>
+    <option name="DEFAULT_STATIC_METHOD" baseAttributes="DEFAULT_FUNCTION_DECLARATION"/>
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
       <value>
         <option name="BACKGROUND" value="#F1F0E9"/>
@@ -260,6 +265,112 @@
     <option name="XML_TAG_NAME">
       <value>
         <option name="FOREGROUND" value="#1e754f"/>
+      </value>
+    </option>
+    <option name="JS.GLOBAL_FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION"/>
+    <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE"/>
+    <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE"/>
+    <option name="JS.MODULE_NAME">
+      <value>
+        <option name="FOREGROUND" value="#b05a78"/>
+      </value>
+    </option>
+    <option name="JS.PRIMITIVE.TYPE">
+      <value>
+        <option name="FOREGROUND" value="#2e808f"/>
+      </value>
+    </option>
+    <option name="JS.TYPE_ALIAS">
+      <value>
+        <option name="FOREGROUND" value="#2e808f"/>
+      </value>
+    </option>
+    <option name="JS.DOC_TYPE">
+      <value>
+        <option name="FOREGROUND" value="#2e808f"/>
+      </value>
+    </option>
+    <option name="CSS.IMPORTANT">
+      <value>
+        <option name="FOREGROUND" value="#1c6b48"/>
+        <option name="FONT_TYPE" value="1"/>
+      </value>
+    </option>
+    <option name="CODE_LENS_BORDER_COLOR">
+      <value>
+        <option name="EFFECT_COLOR" value="#E7E5DB"/>
+      </value>
+    </option>
+    <option name="CSS.URL">
+      <value>
+        <option name="FOREGROUND" value="#a65e2b"/>
+        <option name="EFFECT_COLOR" value="#a65e2b"/>
+        <option name="EFFECT_TYPE" value="1"/>
+      </value>
+    </option>
+    <option name="JS.BRACES">
+      <value>
+        <option name="FOREGROUND" value="#1c6b48"/>
+      </value>
+    </option>
+    <option name="JS.BRACKETS">
+      <value>
+        <option name="FOREGROUND" value="#1c6b48"/>
+      </value>
+    </option>
+    <option name="JS.PARENTHS">
+      <value>
+        <option name="FOREGROUND" value="#1c6b48"/>
+      </value>
+    </option>
+    <option name="JS.KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="#ab5959"/>
+      </value>
+    </option>
+    <option name="CSS.ATTRIBUTE_NAME">
+      <value>
+        <option name="FOREGROUND" value="#b07d48"/>
+      </value>
+    </option>
+    <option name="CSS.CLASS_NAME">
+      <value>
+        <option name="FOREGROUND" value="#b07d48"/>
+      </value>
+    </option>
+    <option name="CSS.FUNCTION">
+      <value>
+        <option name="FOREGROUND" value="#59873a"/>
+      </value>
+    </option>
+    <option name="CSS.PROPERTY_NAME">
+      <value>
+        <option name="FOREGROUND" value="#998418"/>
+      </value>
+    </option>
+    <option name="CSS.PSEUDO">
+      <value>
+        <option name="FOREGROUND" value="#b07d48"/>
+      </value>
+    </option>
+    <option name="CSS.BRACES">
+      <value>
+        <option name="FOREGROUND" value="#296aa3"/>
+      </value>
+    </option>
+    <option name="CSS.BRACKETS">
+      <value>
+        <option name="FOREGROUND" value="#296aa3"/>
+      </value>
+    </option>
+    <option name="CSS.PARENTHESES">
+      <value>
+        <option name="FOREGROUND" value="#296aa3"/>
+      </value>
+    </option>
+    <option name="CSS.COLON">
+      <value>
+        <option name="FOREGROUND" value="#999999"/>
       </value>
     </option>
   </attributes>
