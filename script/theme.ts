@@ -530,12 +530,19 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //     <option name="FOREGROUND" value="d21e1e" />
   //   </value>
   // </option>
+  //   <option name="JS.KEYWORD">
+  //   <value>
+  //     <option name="FOREGROUND" value="cb7676" />
+  //   </value>
+  // </option>
   const JS_BRACES = attributesElement.ele('option', { name: 'JS.BRACES' }).ele('value')
   JS_BRACES.ele('option', { name: 'FOREGROUND', value: primary })
   const JS_BRACKETS = attributesElement.ele('option', { name: 'JS.BRACKETS' }).ele('value')
   JS_BRACKETS.ele('option', { name: 'FOREGROUND', value: primary })
   const JS_PARENTHS = attributesElement.ele('option', { name: 'JS.PARENTHS' }).ele('value')
   JS_PARENTHS.ele('option', { name: 'FOREGROUND', value: primary })
+  const JS_KEYWORD = attributesElement.ele('option', { name: 'JS.KEYWORD' }).ele('value')
+  JS_KEYWORD.ele('option', { name: 'FOREGROUND', value: vitesse('builtin') })
 
   //   <option name="CSS.ATTRIBUTE_NAME">
   //   <value>
