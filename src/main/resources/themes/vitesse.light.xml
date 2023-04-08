@@ -254,6 +254,11 @@
         <option name="FOREGROUND" value="#1e754f"/>
       </value>
     </option>
+    <option name="HTML_CUSTOM_TAG_NAME">
+      <value>
+        <option name="FOREGROUND" value="#b07d48"/>
+      </value>
+    </option>
     <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE"/>
     <option name="XML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING"/>
     <option name="XML_TAG">
@@ -285,6 +290,7 @@
         <option name="FOREGROUND" value="#2e808f"/>
       </value>
     </option>
+    <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD"/>
     <option name="JS.DOC_TYPE">
       <value>
         <option name="FOREGROUND" value="#2e808f"/>
