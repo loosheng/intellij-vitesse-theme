@@ -467,12 +467,15 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //     <option name="FOREGROUND" value="d7c63e" />
   //   </value>
   // </option>
+  // <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD" />
+
   const JS_MODULE_NAME = attributesElement.ele('option', { name: 'JS.MODULE_NAME' }).ele('value')
   JS_MODULE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('namespace') })
   const JS_PRIMITIVE_TYPE = attributesElement.ele('option', { name: 'JS.PRIMITIVE.TYPE' }).ele('value')
   JS_PRIMITIVE_TYPE.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
   const JS_TYPE_ALIAS = attributesElement.ele('option', { name: 'JS.TYPE_ALIAS' }).ele('value')
   JS_TYPE_ALIAS.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
+  attributesElement.ele('option', { name: 'JS.INSTANCE_MEMBER_FUNCTION', baseAttributes: 'DEFAULT_INSTANCE_METHOD' })
 
   //   <option name="JS.DOC_TYPE">
   //   <value>
