@@ -63,7 +63,7 @@ This project Ported from [vscode-theme-vitesse](https://github.com/antfu/vscode-
 
 ---
 ## License
-MIT - Copyright (c) 2021 Anthony Fu
+MIT - Copyright (c) 2021 Anthony Fu <br>
 MIT - Copyright (c) 2023 LooSheng
 
 ---
