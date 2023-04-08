@@ -270,7 +270,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
 
-  attributesElement.ele('option', { name: 'DEFAULT_KEYWORD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
+  attributesElement.ele('option', { name: 'DEFAULT_KEYWORD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('builtin') })
 
   // 函数调用
   //   <option name="DEFAULT_FUNCTION_CALL">
@@ -621,6 +621,9 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const CSS_COLON = attributesElement.ele('option', { name: 'CSS.COLON' }).ele('value')
   CSS_COLON.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
 
+  // DEFAULT_MODULE_KEYWORDS
+  const DEFAULT_MODULE_KEYWORDS = attributesElement.ele('option', { name: 'DEFAULT_MODULE_KEYWORDS' }).ele('value')
+  DEFAULT_MODULE_KEYWORDS.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {

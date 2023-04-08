@@ -11,5 +11,6 @@
         <themeProvider id="com.github.loosheng.intellij-vitesse.dark" path="/themes/vitesse.dark.theme.json" />
         <themeProvider id="com.github.loosheng.intellij-vitesse.dark.soft" path="/themes/vitesse.dark.soft.theme.json" />
         <themeProvider id="com.github.loosheng.intellij-vitesse.black" path="/themes/vitesse.black.theme.json" />
+        <annotator language="" implementationClass="com.github.loosheng.intellijvitessetheme.VitesseThemeAnnotator"/>
     </extensions>
 </idea-plugin>

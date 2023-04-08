@@ -158,7 +158,7 @@
     </option>
     <option name="DEFAULT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="#4d9375"/>
+        <option name="FOREGROUND" value="#cb7676"/>
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
@@ -377,6 +377,11 @@
     <option name="CSS.COLON">
       <value>
         <option name="FOREGROUND" value="#666666"/>
+      </value>
+    </option>
+    <option name="DEFAULT_MODULE_KEYWORDS">
+      <value>
+        <option name="FOREGROUND" value="#4d9375"/>
       </value>
     </option>
   </attributes>
