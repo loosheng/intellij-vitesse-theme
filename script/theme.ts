@@ -421,8 +421,15 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //     <option name="FOREGROUND" value="4d9375" />
   //   </value>
   // </option>
+  //   <option name="HTML_CUSTOM_TAG_NAME">
+  //   <value>
+  //     <option name="FOREGROUND" value="4530d7" />
+  //   </value>
+  // </option>
   const HTML_TAG_NAME = attributesElement.ele('option', { name: 'HTML_TAG_NAME' }).ele('value')
   HTML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
+  const HTML_CUSTOM_TAG_NAME = attributesElement.ele('option', { name: 'HTML_CUSTOM_TAG_NAME' }).ele('value')
+  HTML_CUSTOM_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
 
   // <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
   attributesElement.ele('option', { name: 'XML_ATTRIBUTE_NAME', baseAttributes: 'DEFAULT_ATTRIBUTE' })
