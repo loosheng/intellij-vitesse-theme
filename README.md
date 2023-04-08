@@ -50,19 +50,21 @@ vscode-theme-vitesse</a></h3>
   manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
-## SVG Logo Design Document
+---
+## SVG Logo Design
 
-[Vitesse Logo Design Document](https://mastergo.com/goto/pDDCTgJo?file=90290510852665)
-
-## Links
-
-[vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse)
+[Vitesse Logo Design](https://mastergo.com/goto/pDDCTgJo?file=90290510852665)
 
 ---
 
 ## Thanks
 
 This project Ported from [vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse).
+
+---
+## License
+MIT - Copyright (c) 2021 Anthony Fu
+MIT - Copyright (c) 2023 LooSheng
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
