@@ -3,6 +3,8 @@
 # intellij-vitesse-theme Changelog
 
 ## [Unreleased]
+### Fix
+- `SELECTION_BACKGROUND` color not obvious
 
 ## [0.2.0] - 2023-04-07
 
