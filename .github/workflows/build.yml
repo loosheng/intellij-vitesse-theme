@@ -46,10 +46,9 @@ jobs:
 
       # Setup node
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: 16
-          cache: pnpm
+          node-version: '16'
       - run: npm i -g pnpm@7.26.3 @antfu/ni
       - run: nci
       - run: nr build
