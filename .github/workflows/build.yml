@@ -49,7 +49,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'pnpm'
+          cache: pnpm
       - run: npm i -g pnpm@7.26.3 @antfu/ni
       - run: nci
       - run: nr build
