@@ -33,6 +33,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
   const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
   const selectionBackground = pick({ light: '#22222215', dark: '#eeeeee15' })
+  const selectionBackground2 = pick({ light: '#22222220', dark: '#eeeeee20' })
 
   // root element
   const theme = builder.create('scheme', { encoding: 'utf-8' })
@@ -89,7 +90,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // GUTTER_BACKGROUND 编辑区域左侧行号区域背景色
   colorsElement.ele('option', { name: 'GUTTER_BACKGROUND', value: background })
   // SELECTION_BACKGROUND 选中区域背景色
-  colorsElement.ele('option', { name: 'SELECTION_BACKGROUND', value: activeBackground })
+  colorsElement.ele('option', { name: 'SELECTION_BACKGROUND', value: selectionBackground2 })
   // SELECTION_FOREGROUND 选中区域前景色
   colorsElement.ele('option', { name: 'SELECTION_FOREGROUND' })
 

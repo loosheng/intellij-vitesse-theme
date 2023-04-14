@@ -3,7 +3,7 @@
   <colors>
     <option name="ADDED_LINES_COLOR" value="#4d9375"/>
     <option name="GUTTER_BACKGROUND" value="#222222"/>
-    <option name="SELECTION_BACKGROUND" value="#292929"/>
+    <option name="SELECTION_BACKGROUND" value="#eeeeee20"/>
     <option name="SELECTION_FOREGROUND"/>
     <option name="ANNOTATIONS_COLOR" value="#758575dd"/>
     <option name="ANNOTATIONS_LAST_COMMIT_COLOR" value="#758575dd"/>
