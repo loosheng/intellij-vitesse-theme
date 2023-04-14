@@ -3,8 +3,11 @@
 # intellij-vitesse-theme Changelog
 
 ## [Unreleased]
+### Added
+- HTML Custom Tag
 ### Fix
 - `SELECTION_BACKGROUND` color not obvious
+- `INSTANCE_MEMBER_FUNCTION` color
 
 ## [0.2.0] - 2023-04-07
 
