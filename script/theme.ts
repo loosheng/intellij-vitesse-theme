@@ -381,10 +381,20 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //     <option name="EFFECT_TYPE" value="2" />
   //   </value>
   // </option>
+  // <option name="DEFAULT_REASSIGNED_LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
+  // <option name="DEFAULT_REASSIGNED_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
   const DEFAULT_INVALID_STRING_ESCAPE = attributesElement.ele('option', { name: 'DEFAULT_INVALID_STRING_ESCAPE' }).ele('value')
   DEFAULT_INVALID_STRING_ESCAPE.ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
   DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_COLOR', value: vitesse('red') })
   DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_TYPE', value: '2' })
+
+  const DEFAULT_LOCAL_VARIABLE = attributesElement.ele('option', { name: 'DEFAULT_LOCAL_VARIABLE' }).ele('value')
+  DEFAULT_LOCAL_VARIABLE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  const DEFAULT_PARAMETER = attributesElement.ele('option', { name: 'DEFAULT_PARAMETER' }).ele('value')
+  DEFAULT_PARAMETER.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+
+  attributesElement.ele('option', { name: 'DEFAULT_REASSIGNED_LOCAL_VARIABLE', baseAttributes: 'DEFAULT_LOCAL_VARIABLE' })
+  attributesElement.ele('option', { name: 'DEFAULT_REASSIGNED_PARAMETER', baseAttributes: 'DEFAULT_PARAMETER' })
 
   //   <option name="BAD_CHARACTER">
   //   <value>
@@ -559,7 +569,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const JS_PARENTHS = attributesElement.ele('option', { name: 'JS.PARENTHS' }).ele('value')
   JS_PARENTHS.ele('option', { name: 'FOREGROUND', value: primary })
   const JS_KEYWORD = attributesElement.ele('option', { name: 'JS.KEYWORD' }).ele('value')
-  JS_KEYWORD.ele('option', { name: 'FOREGROUND', value: vitesse('builtin') })
+  JS_KEYWORD.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
   const JS_PARAMETER = attributesElement.ele('option', { name: 'JS.PARAMETER' }).ele('value')
   JS_PARAMETER.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
 
