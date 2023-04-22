@@ -334,6 +334,11 @@
         <option name="FOREGROUND" value="#cb7676"/>
       </value>
     </option>
+    <option name="JS.PARAMETER">
+      <value>
+        <option name="FOREGROUND" value="#bd976a"/>
+      </value>
+    </option>
     <option name="CSS.ATTRIBUTE_NAME">
       <value>
         <option name="FOREGROUND" value="#bd976a"/>
