@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+### Optimize
+- JS.PARAMETER
+- JS_KEYWORD
+
 ## [0.2.1] - 2023-04-14
 
 ### Added
