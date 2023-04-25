@@ -186,6 +186,11 @@
         <option name="FOREGROUND" value="#b8a965"/>
       </value>
     </option>
+    <option name="DEFAULT_GLOBAL_VARIABLE">
+      <value>
+        <option name="FOREGROUND" value="#bd976a"/>
+      </value>
+    </option>
     <option name="DEFAULT_ENTITY">
       <value>
         <option name="FOREGROUND" value="#4d9375"/>

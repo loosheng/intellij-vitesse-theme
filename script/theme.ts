@@ -311,6 +311,13 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // </option>
 
   attributesElement.ele('option', { name: 'DEFAULT_IDENTIFIER' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
+
+  //       <option name="DEFAULT_GLOBAL_VARIABLE">
+  //         <value>
+  //           <option name="FOREGROUND" value="e80303" />
+  //         </value>
+  //       </option>
+  attributesElement.ele('option', { name: 'DEFAULT_GLOBAL_VARIABLE' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
   //   <option name="DEFAULT_ENTITY">
   //   <value>
   //     <option name="FOREGROUND" value="ff0000" />
