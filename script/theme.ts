@@ -647,6 +647,15 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const CSS_COLON = attributesElement.ele('option', { name: 'CSS.COLON' }).ele('value')
   CSS_COLON.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
 
+  //   <option name="KOTLIN_MUTABLE_VARIABLE">
+  //   <value>
+  //     <option name="EFFECT_COLOR" value="c19f1c" />
+  //     <option name="EFFECT_TYPE" value="1" />
+  //   </value>
+  // </option>
+  const KOTLIN_MUTABLE_VARIABLE = attributesElement.ele('option', { name: 'KOTLIN_MUTABLE_VARIABLE' }).ele('value')
+  KOTLIN_MUTABLE_VARIABLE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
