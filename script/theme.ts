@@ -142,6 +142,25 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   TEXT.ele('option', { name: 'FOREGROUND', value: foreground })
   TEXT.ele('option', { name: 'BACKGROUND', value: background })
 
+  //   <option name="ERRORS_ATTRIBUTES">
+  //   <value>
+  //     <option name="EFFECT_COLOR" value="166dcd" />
+  //     <option name="ERROR_STRIPE_COLOR" value="166dcd" />
+  //     <option name="EFFECT_TYPE" value="2" />
+  //   </value>
+  // </option>
+  const ERRORS_ATTRIBUTES = attributesElement.ele('option', { name: 'ERRORS_ATTRIBUTES' }).ele('value')
+  ERRORS_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: pick({ light: primer.red[5], dark: primer.red[4] }) })
+  ERRORS_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: pick({ light: primer.red[5], dark: primer.red[4] }) })
+  ERRORS_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '2' })
+  //   <option name="WRONG_REFERENCES_ATTRIBUTES">
+  //   <value>
+  //     <option name="FOREGROUND" value="166dcd" />
+  //   </value>
+  // </option>
+  const WRONG_REFERENCES_ATTRIBUTES = attributesElement.ele('option', { name: 'WRONG_REFERENCES_ATTRIBUTES' }).ele('value')
+  WRONG_REFERENCES_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: pick({ light: primer.red[5], dark: primer.red[4] }) })
+
   attributesElement.ele('option', { name: 'ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES' }).ele('value')
   // ANNOTATION_NAME_ATTRIBUTES: 表示注释名称的属性
   attributesElement.ele('option', { name: 'ANNOTATION_NAME_ATTRIBUTES', baseAttributes: 'DEFAULT_METADATA' })
@@ -846,11 +865,11 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
             // 'Objects.Grey': '#9790ad',
             // 'Objects.RedStatus': '#dd3962',
-            // 'Objects.Red': '#c63a5d',
-            // 'Objects.Pink': '#f98b9e',
-            // 'Objects.Yellow': '#caba2d',
-            // 'Objects.Green': '#239e62',
-            // 'Objects.Blue': '#598bff',
+            'Objects.Red': vitesse('red'),
+            'Objects.Pink': vitesse('magenta'),
+            'Objects.Yellow': vitesse('yellow'),
+            'Objects.Green': vitesse('green'),
+            'Objects.Blue': vitesse('blue'),
             // 'Objects.Purple': '#af71e0',
             // 'Objects.BlackText': '#000000ff',
             // 'Objects.YellowDark': '#988c26',
