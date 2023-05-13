@@ -155,12 +155,12 @@
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="#6893BF"/>
+        <option name="FOREGROUND" value="#7f8ac7"/>
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="#6893BF"/>
+        <option name="FOREGROUND" value="#7f8ac7"/>
       </value>
     </option>
     <option name="DEFAULT_CONSTANT">
@@ -216,7 +216,7 @@
     </option>
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
-        <option name="FOREGROUND" value="#5DA994"/>
+        <option name="FOREGROUND" value="#5d99a9"/>
       </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD">
@@ -311,18 +311,18 @@
     </option>
     <option name="JS.PRIMITIVE.TYPE">
       <value>
-        <option name="FOREGROUND" value="#5da9a7"/>
+        <option name="FOREGROUND" value="#5DA994"/>
       </value>
     </option>
     <option name="JS.TYPE_ALIAS">
       <value>
-        <option name="FOREGROUND" value="#5da9a7"/>
+        <option name="FOREGROUND" value="#5DA994"/>
       </value>
     </option>
     <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD"/>
     <option name="JS.DOC_TYPE">
       <value>
-        <option name="FOREGROUND" value="#5da9a7"/>
+        <option name="FOREGROUND" value="#5DA994"/>
       </value>
     </option>
     <option name="CSS.IMPORTANT">

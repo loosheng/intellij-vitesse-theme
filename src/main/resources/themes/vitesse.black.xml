@@ -8,7 +8,7 @@
     <option name="ANNOTATIONS_COLOR" value="#758575dd"/>
     <option name="ANNOTATIONS_LAST_COMMIT_COLOR" value="#758575dd"/>
     <option name="CARET_COLOR" value="#aeafad"/>
-    <option name="CARET_ROW_COLOR" value="#eeeeee15"/>
+    <option name="CARET_ROW_COLOR" value="#121212"/>
     <option name="CONSOLE_BACKGROUND_KEY" value="#000000"/>
     <option name="DELETED_LINES_COLOR" value="#cb7676"/>
     <option name="DIFF_SEPARATORS_BACKGROUND" value="#181818"/>
@@ -16,7 +16,7 @@
     <option name="DOC_COMMENT_GUIDE" value="#758575dd"/>
     <option name="DOC_COMMENT_LINK" value="#758575dd"/>
     <option name="ERROR_HINT" value="#cb7676"/>
-    <option name="FOLDED_TEXT_BORDER_COLOR" value="#eeeeee15"/>
+    <option name="FOLDED_TEXT_BORDER_COLOR" value="#121212"/>
     <option name="IGNORED_ADDED_LINES_BORDER_COLOR" value="#4d9375"/>
     <option name="IGNORED_DELETED_LINES_BORDER_COLOR" value="#cb7676"/>
     <option name="IGNORED_MODIFIED_LINES_BORDER_COLOR" value="#6394bf"/>
@@ -30,10 +30,10 @@
     <option name="LOOKUP_COLOR" value="#000000"/>
     <option name="METHOD_SEPARATORS_COLOR" value="#586069"/>
     <option name="MODIFIED_LINES_COLOR" value="#6394bf"/>
-    <option name="NOTIFICATION_BACKGROUND" value="#eeeeee15"/>
-    <option name="PROMOTION_PANE" value="#eeeeee15"/>
+    <option name="NOTIFICATION_BACKGROUND" value="#121212"/>
+    <option name="PROMOTION_PANE" value="#121212"/>
     <option name="QUESTION_HINT" value="#e6cc77"/>
-    <option name="RECENT_LOCATIONS_SELECTION" value="#eeeeee15"/>
+    <option name="RECENT_LOCATIONS_SELECTION" value="#121212"/>
     <option name="RIGHT_MARGIN_COLOR" value="#dedcd550"/>
     <option name="SELECTED_INDENT_GUIDE" value="#4d9375"/>
     <option name="ScrollBar.Mac.hoverThumbColor" value="#dedcd550"/>
@@ -50,7 +50,7 @@
   <attributes>
     <option name="TEXT">
       <value>
-        <option name="FOREGROUND" value="#dbd7caee"/>
+        <option name="FOREGROUND" value="#dbd7cacc"/>
         <option name="BACKGROUND" value="#000000"/>
       </value>
     </option>
@@ -155,12 +155,12 @@
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="#6893BF"/>
+        <option name="FOREGROUND" value="#7f8ac7"/>
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="#6893BF"/>
+        <option name="FOREGROUND" value="#7f8ac7"/>
       </value>
     </option>
     <option name="DEFAULT_CONSTANT">
@@ -216,7 +216,7 @@
     </option>
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
-        <option name="FOREGROUND" value="#5DA994"/>
+        <option name="FOREGROUND" value="#5d99a9"/>
       </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD">
@@ -311,18 +311,18 @@
     </option>
     <option name="JS.PRIMITIVE.TYPE">
       <value>
-        <option name="FOREGROUND" value="#5da9a7"/>
+        <option name="FOREGROUND" value="#5DA994"/>
       </value>
     </option>
     <option name="JS.TYPE_ALIAS">
       <value>
-        <option name="FOREGROUND" value="#5da9a7"/>
+        <option name="FOREGROUND" value="#5DA994"/>
       </value>
     </option>
     <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD"/>
     <option name="JS.DOC_TYPE">
       <value>
-        <option name="FOREGROUND" value="#5da9a7"/>
+        <option name="FOREGROUND" value="#5DA994"/>
       </value>
     </option>
     <option name="CSS.IMPORTANT">

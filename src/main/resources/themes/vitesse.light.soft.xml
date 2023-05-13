@@ -216,7 +216,7 @@
     </option>
     <option name="DEFAULT_INTERFACE_NAME">
       <value>
-        <option name="FOREGROUND" value="#2e8f82"/>
+        <option name="FOREGROUND" value="#2e808f"/>
       </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD">
@@ -311,18 +311,18 @@
     </option>
     <option name="JS.PRIMITIVE.TYPE">
       <value>
-        <option name="FOREGROUND" value="#2e808f"/>
+        <option name="FOREGROUND" value="#2e8f82"/>
       </value>
     </option>
     <option name="JS.TYPE_ALIAS">
       <value>
-        <option name="FOREGROUND" value="#2e808f"/>
+        <option name="FOREGROUND" value="#2e8f82"/>
       </value>
     </option>
     <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD"/>
     <option name="JS.DOC_TYPE">
       <value>
-        <option name="FOREGROUND" value="#2e808f"/>
+        <option name="FOREGROUND" value="#2e8f82"/>
       </value>
     </option>
     <option name="CSS.IMPORTANT">

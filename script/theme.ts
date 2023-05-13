@@ -11,7 +11,9 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
   const primer = getColors(style)
 
-  const foreground = vitesse('foreground')
+  const foreground = black
+    ? '#dbd7cacc'
+    : vitesse('foreground')
   const secondaryForeground = vitesse('secondaryForeground')
   const activeForeground = vitesse('activeForeground')
   const primary = vitesse('primary')
@@ -25,7 +27,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
       ? vitesse('lowBackground')
       : vitesse('background')
   const activeBackground = black
-    ? '#eeeeee15'
+    ? '#121212'
     : soft
       ? vitesse('lowActiveBackground')
       : vitesse('activeBackground')

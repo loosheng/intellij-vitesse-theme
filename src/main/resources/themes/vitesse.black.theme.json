@@ -5,19 +5,19 @@
   "author": "LooSheng",
   "ui": {
     "*": {
-      "foreground": "#dbd7caee",
+      "foreground": "#dbd7cacc",
       "background": "#000000",
       "borderColor": "#191919",
       "disabledText": "#758575dd",
       "disabledForeground": "#758575dd",
       "disabledBackground": "#000000",
-      "inactiveForeground": "#dbd7caee",
-      "lightSelectionBackground": "#eeeeee15",
-      "hoverBackground": "#eeeeee15",
-      "selectionBackground": "#eeeeee15",
-      "selectionForeground": "#dbd7caee",
-      "selectionInactiveForeground": "#dbd7caee",
-      "selectionInactiveBackground": "#eeeeee15",
+      "inactiveForeground": "#dbd7cacc",
+      "lightSelectionBackground": "#121212",
+      "hoverBackground": "#121212",
+      "selectionBackground": "#121212",
+      "selectionForeground": "#dbd7cacc",
+      "selectionInactiveForeground": "#dbd7cacc",
+      "selectionInactiveBackground": "#121212",
       "focusColor": "#4d937580",
       "infoForeground": "#758575dd",
       "primaryText": "#4d9375"
@@ -26,11 +26,11 @@
       "borderColor": "#2f363d"
     },
     "Button": {
-      "foreground": "#dbd7caee",
-      "startBackground": "#eeeeee15",
-      "endBackground": "#eeeeee15",
-      "startBorderColor": "#eeeeee15",
-      "endBorderColor": "#eeeeee15",
+      "foreground": "#dbd7cacc",
+      "startBackground": "#121212",
+      "endBackground": "#121212",
+      "startBorderColor": "#121212",
+      "endBorderColor": "#121212",
       "focusedBorderColor": "#191919",
       "default": {
         "foreground": "#000000",
@@ -54,7 +54,7 @@
     "GotItTooltip": {
       "linkForeground": "#4d9375",
       "Button": {
-        "foreground": "#dbd7caee",
+        "foreground": "#dbd7cacc",
         "startBackground": "#000000",
         "endBackground": "#000000",
         "startBorderColor": "#191919",
@@ -64,36 +64,36 @@
     "ToolTip": {
       "background": "#000000",
       "borderColor": "#191919",
-      "foreground": "#dbd7caee",
-      "infoForeground": "#dbd7caee",
-      "shortcutForeground": "#dbd7caee"
+      "foreground": "#dbd7cacc",
+      "infoForeground": "#dbd7cacc",
+      "shortcutForeground": "#dbd7cacc"
     },
     "Tooltip.Learning": {
       "background": "#000000",
       "borderColor": "#191919",
       "spanBackground": "#000000",
-      "spanForeground": "#dbd7caee",
-      "foreground": "#dbd7caee",
-      "stepNumberForeground": "#dbd7caee"
+      "spanForeground": "#dbd7cacc",
+      "foreground": "#dbd7cacc",
+      "stepNumberForeground": "#dbd7cacc"
     },
     "CompletionPopup": {
-      "foreground": "#dbd7caee",
-      "matchForeground": "#dbd7caee",
-      "selectionBackground": "#eeeeee15",
+      "foreground": "#dbd7cacc",
+      "matchForeground": "#dbd7cacc",
+      "selectionBackground": "#121212",
       "Advertiser": {
-        "foreground": "#dbd7caee",
+        "foreground": "#dbd7cacc",
         "background": "#000000"
       }
     },
     "ParameterInfo": {
       "background": "#000000",
-      "foreground": "#dbd7caee",
+      "foreground": "#dbd7cacc",
       "currentOverloadBackground": "#000000",
-      "currentParameterForeground": "#dbd7caee"
+      "currentParameterForeground": "#dbd7cacc"
     },
     "SpeedSearch": {
       "background": "#000000",
-      "foreground": "#dbd7caee",
+      "foreground": "#dbd7cacc",
       "borderColor": "#191919"
     },
     "SearchMatch": {
@@ -102,8 +102,8 @@
     },
     "SearchEverywhere": {
       "Tab": {
-        "selectedBackground": "#eeeeee15",
-        "selectedForeground": "#dbd7caee"
+        "selectedBackground": "#121212",
+        "selectedForeground": "#dbd7cacc"
       }
     },
     "ProgressBar": {
@@ -113,47 +113,47 @@
       "trackColor": "#eeeeee15"
     },
     "Panel": {
-      "foreground": "#dbd7caee",
+      "foreground": "#dbd7cacc",
       "background": "#000000"
     },
     "Tree": {
       "background": "#000000",
-      "foreground": "#dbd7caee",
-      "selectionBackground": "#eeeeee15",
-      "selectionForeground": "#dbd7caee"
+      "foreground": "#dbd7cacc",
+      "selectionBackground": "#121212",
+      "selectionForeground": "#dbd7cacc"
     },
     "Menu": {
       "separatorColor": "#191919"
     },
     "MenuItem": {
       "background": "#000000",
-      "foreground": "#dbd7caee",
+      "foreground": "#dbd7cacc",
       "selectionBackground": "#eeeeee15",
-      "selectionForeground": "#dbd7caee"
+      "selectionForeground": "#dbd7cacc"
     },
     "CheckBox": {
       "background": "#000000"
     },
     "CheckBoxMenuItem": {
       "background": "#000000",
-      "foreground": "#dbd7caee",
-      "selectionBackground": "#eeeeee15",
-      "selectionForeground": "#dbd7caee"
+      "foreground": "#dbd7cacc",
+      "selectionBackground": "#121212",
+      "selectionForeground": "#dbd7cacc"
     },
     "ColorChooser": {
-      "foreground": "#dbd7caee",
+      "foreground": "#dbd7cacc",
       "background": "#000000"
     },
     "ComboBox": {
-      "foreground": "#dbd7caee",
+      "foreground": "#dbd7cacc",
       "background": "#000000",
-      "selectionForeground": "#dbd7caee",
-      "selectionBackground": "#eeeeee15",
+      "selectionForeground": "#dbd7cacc",
+      "selectionBackground": "#121212",
       "nonEditableBackground": "#000000",
       "modifiedItemForeground": "#4d9375",
       "ArrowButton": {
         "background": "#000000",
-        "iconColor": "#dbd7caee",
+        "iconColor": "#dbd7cacc",
         "nonEditableBackground": "#000000"
       }
     },
@@ -171,13 +171,13 @@
         "Objects.Blue": "#6394bf",
         "Checkbox.Background.Default.Dark": "#000000",
         "Checkbox.Border.Default.Dark": "#2f363d",
-        "Checkbox.Foreground.Selected.Dark": "#dbd7caee",
+        "Checkbox.Foreground.Selected.Dark": "#dbd7cacc",
         "Checkbox.Focus.Wide.Dark": "#4d937580",
         "Checkbox.Focus.Thin.Default.Dark": "#4d9375",
         "Checkbox.Focus.Thin.Selected.Dark": "#4d9375",
         "Checkbox.Background.Disabled.Dark": "#758575dd",
         "Checkbox.Border.Disabled.Dark": "#2f363d",
-        "Checkbox.Foreground.Disabled.Dark": "#dbd7caee"
+        "Checkbox.Foreground.Disabled.Dark": "#dbd7cacc"
       }
     }
   }
