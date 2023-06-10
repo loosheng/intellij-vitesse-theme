@@ -736,18 +736,6 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: vitesse('comment') })
   INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '1' })
 
-  //   <option name="TODO_DEFAULT_ATTRIBUTES">
-  //   <value>
-  //     <option name="FOREGROUND" value="dbf00" />
-  //     <option name="FONT_TYPE" value="3" />
-  //     <option name="ERROR_STRIPE_COLOR" value="dbf00" />
-  //   </value>
-  // </option>
-  const TODO_DEFAULT_ATTRIBUTES = attributesElement.ele('option', { name: 'TODO_DEFAULT_ATTRIBUTES' }).ele('value')
-  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: vitesse('green') })
-  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FONT_TYPE', value: '3' })
-  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: vitesse('green') })
-
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {

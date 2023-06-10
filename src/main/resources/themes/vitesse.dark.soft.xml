@@ -453,12 +453,5 @@
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
-    <option name="TODO_DEFAULT_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="#4d9375"/>
-        <option name="FONT_TYPE" value="3"/>
-        <option name="ERROR_STRIPE_COLOR" value="#4d9375"/>
-      </value>
-    </option>
   </attributes>
 </scheme>
