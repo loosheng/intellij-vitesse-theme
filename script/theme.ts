@@ -689,6 +689,65 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FONT_TYPE', value: '3' })
   TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: vitesse('green') })
 
+  //   <option name="CTRL_CLICKABLE">
+  //   <value>
+  //     <option name="FOREGROUND" value="842424" />
+  //     <option name="EFFECT_COLOR" value="842424" />
+  //     <option name="EFFECT_TYPE" value="1" />
+  //   </value>
+  // </option>
+  const CTRL_CLICKABLE = attributesElement.ele('option', { name: 'CTRL_CLICKABLE' }).ele('value')
+  CTRL_CLICKABLE.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  CTRL_CLICKABLE.ele('option', { name: 'EFFECT_COLOR', value: vitesse('blue') })
+  CTRL_CLICKABLE.ele('option', { name: 'EFFECT_TYPE', value: '1' })
+  //   <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
+  //   <value>
+  //     <option name="FOREGROUND" value="842424" />
+  //     <option name="BACKGROUND" value="e9e9e9" />
+  //     <option name="EFFECT_COLOR" value="842424" />
+  //     <option name="EFFECT_TYPE" value="1" />
+  //   </value>
+  // </option>
+  const FOLLOWED_HYPERLINK_ATTRIBUTES = attributesElement.ele('option', { name: 'FOLLOWED_HYPERLINK_ATTRIBUTES' }).ele('value')
+  FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'BACKGROUND' })
+  FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: vitesse('blue') })
+  FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '1' })
+  //   <option name="HYPERLINK_ATTRIBUTES">
+  //   <value>
+  //     <option name="FOREGROUND" value="842424" />
+  //     <option name="EFFECT_COLOR" value="842424" />
+  //     <option name="EFFECT_TYPE" value="1" />
+  //   </value>
+  // </option>
+
+  const HYPERLINK_ATTRIBUTES = attributesElement.ele('option', { name: 'HYPERLINK_ATTRIBUTES' }).ele('value')
+  HYPERLINK_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: vitesse('blue') })
+  HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '1' })
+
+  //   <option name="INACTIVE_HYPERLINK_ATTRIBUTES">
+  //   <value>
+  //     <option name="EFFECT_COLOR" value="842424" />
+  //     <option name="EFFECT_TYPE" value="1" />
+  //   </value>
+  // </option>
+  const INACTIVE_HYPERLINK_ATTRIBUTES = attributesElement.ele('option', { name: 'INACTIVE_HYPERLINK_ATTRIBUTES' }).ele('value')
+  INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: vitesse('comment') })
+  INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '1' })
+
+  //   <option name="TODO_DEFAULT_ATTRIBUTES">
+  //   <value>
+  //     <option name="FOREGROUND" value="dbf00" />
+  //     <option name="FONT_TYPE" value="3" />
+  //     <option name="ERROR_STRIPE_COLOR" value="dbf00" />
+  //   </value>
+  // </option>
+  const TODO_DEFAULT_ATTRIBUTES = attributesElement.ele('option', { name: 'TODO_DEFAULT_ATTRIBUTES' }).ele('value')
+  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: vitesse('green') })
+  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FONT_TYPE', value: '3' })
+  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: vitesse('green') })
+
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
