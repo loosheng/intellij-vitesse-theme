@@ -35,7 +35,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
   const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
   const selectionBackground = pick({ light: '#22222215', dark: '#eeeeee15' })
-  const selectionBackground2 = pick({ light: '#22222220', dark: '#eeeeee20' })
+  const selectionBackground2 = pick({ light: '#cccccc', dark: '#666666' })
 
   // root element
   const theme = builder.create('scheme', { encoding: 'utf-8' })
@@ -87,7 +87,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   WHITESPACES_MODIFIED_LINES_COLOR: 表示版本控制中修改后的空格和制表符的颜色
   **/
   const colorsElement = theme.ele('colors')
-  // EDITOR_BACKGROUND  编辑区域背景色
+  // ADDED_LINES_COLOR  表示版本控制中新增行的颜色
   colorsElement.ele('option', { name: 'ADDED_LINES_COLOR', value: vitesse('green') })
   // GUTTER_BACKGROUND 编辑区域左侧行号区域背景色
   colorsElement.ele('option', { name: 'GUTTER_BACKGROUND', value: background })
