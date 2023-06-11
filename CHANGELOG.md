@@ -4,6 +4,17 @@
 
 ## [Unreleased]
 
+## [0.2.3] - 2023-06-11
+feat:
+
+- KOTLIN_MUTABLE_VARIABLE
+- todo color
+- http link
+- DEFAULT_GLOBAL_VARIABLE
+- `ERRORS` and `WRONG`
+- console background on selected
+- chore: sync colors
+
 ## [0.2.2] - 2023-04-24
 
 ### Optimize
@@ -50,7 +61,8 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.2...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.1.0...v0.2.0
