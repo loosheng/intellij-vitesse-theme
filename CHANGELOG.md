@@ -5,15 +5,17 @@
 ## [Unreleased]
 
 ## [0.2.3] - 2023-06-11
-feat:
 
-- KOTLIN_MUTABLE_VARIABLE
-- todo color
-- http link
+### Optimize
+- Todo Color
+- HTTP Link
 - DEFAULT_GLOBAL_VARIABLE
 - `ERRORS` and `WRONG`
-- console background on selected
-- chore: sync colors
+- Console background on selected
+- `KOTLIN_MUTABLE_VARIABLE`
+
+### Other
+- sync colors
 
 ## [0.2.2] - 2023-04-24
 
