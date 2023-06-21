@@ -292,7 +292,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
 
-  attributesElement.ele('option', { name: 'DEFAULT_KEYWORD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
+  attributesElement.ele('option', { name: 'DEFAULT_KEYWORD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('builtin') })
 
   // 函数调用
   //   <option name="DEFAULT_FUNCTION_CALL">
@@ -597,7 +597,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const JS_PARENTHS = attributesElement.ele('option', { name: 'JS.PARENTHS' }).ele('value')
   JS_PARENTHS.ele('option', { name: 'FOREGROUND', value: primary })
   const JS_KEYWORD = attributesElement.ele('option', { name: 'JS.KEYWORD' }).ele('value')
-  JS_KEYWORD.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
+  JS_KEYWORD.ele('option', { name: 'FOREGROUND', value: vitesse('builtin') })
   const JS_PARAMETER = attributesElement.ele('option', { name: 'JS.PARAMETER' }).ele('value')
   JS_PARAMETER.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
 

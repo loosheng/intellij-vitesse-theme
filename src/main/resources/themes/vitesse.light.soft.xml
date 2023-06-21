@@ -170,7 +170,7 @@
     </option>
     <option name="DEFAULT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="#1e754f"/>
+        <option name="FOREGROUND" value="#ab5959"/>
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
@@ -360,7 +360,7 @@
     </option>
     <option name="JS.KEYWORD">
       <value>
-        <option name="FOREGROUND" value="#1e754f"/>
+        <option name="FOREGROUND" value="#ab5959"/>
       </value>
     </option>
     <option name="JS.PARAMETER">
