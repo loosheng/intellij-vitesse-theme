@@ -3,7 +3,14 @@ import pkg from '../package.json'
 import { getColors } from './primer'
 import { VitesseThemes } from './colors'
 
-export default function getEditorSchemeTheme({ style, name, soft = false, black = false, editorScheme }) {
+interface ThemeOptions {
+  style: 'light' | 'dark'
+  name: string
+  soft?: boolean
+  black?: boolean
+  editorScheme: string
+}
+export default function getEditorSchemeTheme({ style, name, soft = false, black = false, editorScheme }: ThemeOptions) {
   // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
   const pick = options => options[style]
 
@@ -915,6 +922,15 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
             nonEditableBackground: background,
           },
         },
+        // 'FileColor': {
+        // Yellow: background,
+        // Green: '#092E15',
+        // Blue: '#00004D',
+        // Violet: '#471747',
+        // Orange: '#733000',
+        // Rose: '#4D0F22',
+        // Gray: '#062329',
+        // },
         'icons': {
           ColorPalette: {
             'Actions.Grey': pick({ light: primer.gray[3], dark: primer.gray[1] }),
