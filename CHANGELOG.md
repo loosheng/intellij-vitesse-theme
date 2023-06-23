@@ -4,6 +4,9 @@
 
 ## [Unreleased]
 
+## [0.2.5] - 2023-06-23
+- update`KEYWORD` color
+
 ## [0.2.3] - 2023-06-11
 
 ### Optimize
@@ -63,7 +66,8 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.3...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.5...HEAD
+[0.2.5]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.3...v0.2.5
 [0.2.3]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.0...v0.2.1
