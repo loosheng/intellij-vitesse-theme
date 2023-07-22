@@ -77,9 +77,14 @@
       "stepNumberForeground": "#dbd7caee"
     },
     "ToolWindow": {
+      "background": "#222222",
       "Header": {
         "background": "#292929",
         "inactiveBackground": "#222222"
+      },
+      "Button": {
+        "selectedForeground": "#dbd7caee",
+        "selectedBackground": "#292929"
       }
     },
     "CompletionPopup": {
