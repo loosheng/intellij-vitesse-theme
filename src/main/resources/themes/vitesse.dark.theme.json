@@ -146,6 +146,11 @@
       "selectionBackground": "#181818",
       "selectionForeground": "#dbd7caee"
     },
+    "Editor": {
+      "background": "#121212",
+      "foreground": "#dbd7caee",
+      "shortcutForeground": "#4d9375"
+    },
     "ColorChooser": {
       "foreground": "#dbd7caee",
       "background": "#121212"

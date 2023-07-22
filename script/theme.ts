@@ -912,6 +912,11 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           selectionBackground: activeBackground,
           selectionForeground: foreground,
         },
+        'Editor': {
+          background,
+          foreground,
+          shortcutForeground: primary,
+        },
         'ColorChooser': {
           foreground,
           background,
