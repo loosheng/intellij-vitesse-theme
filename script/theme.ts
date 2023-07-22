@@ -829,6 +829,12 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
           foreground,
           stepNumberForeground: foreground,
         },
+        'ToolWindow': {
+          Header: {
+            background: activeBackground,
+            inactiveBackground: background,
+          },
+        },
         'CompletionPopup': {
           foreground,
           matchForeground: foreground,
