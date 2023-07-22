@@ -103,7 +103,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // SELECTION_FOREGROUND 选中区域前景色
   colorsElement.ele('option', { name: 'SELECTION_FOREGROUND' })
   // <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="a9b837" />
-  colorsElement.ele('option', { name: 'FILESTATUS_IDEA_FILESTATUS_IGNORED', value: vitesse('comment') })
+  colorsElement.ele('option', { name: 'FILESTATUS_IDEA_FILESTATUS_IGNORED', value: vitesse('ignored') })
   colorsElement.ele('option', { name: 'ANNOTATIONS_COLOR', value: vitesse('comment') })
   colorsElement.ele('option', { name: 'ANNOTATIONS_LAST_COMMIT_COLOR', value: vitesse('comment') })
   colorsElement.ele('option', { name: 'CARET_COLOR', value: pick({ light: '#000000', dark: '#aeafad' }) })
