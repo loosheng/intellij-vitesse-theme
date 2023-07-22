@@ -5,6 +5,7 @@
     <option name="GUTTER_BACKGROUND" value="#222222"/>
     <option name="SELECTION_BACKGROUND" value="#666666"/>
     <option name="SELECTION_FOREGROUND"/>
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="#dedcd550"/>
     <option name="ANNOTATIONS_COLOR" value="#758575dd"/>
     <option name="ANNOTATIONS_LAST_COMMIT_COLOR" value="#758575dd"/>
     <option name="CARET_COLOR" value="#aeafad"/>
