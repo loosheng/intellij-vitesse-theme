@@ -4,6 +4,13 @@
 
 ## [Unreleased]
 
+## [0.2.6] - 2023-07-27
+
+### Optimize
+- VSC ignore Color
+- Tool color
+- shortcut color
+
 ## [0.2.5] - 2023-06-23
 - update`KEYWORD` color
 
@@ -66,7 +73,8 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.5...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.6...HEAD
+[0.2.6]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.3...v0.2.5
 [0.2.3]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.1...v0.2.2
