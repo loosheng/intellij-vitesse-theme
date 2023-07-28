@@ -194,7 +194,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
   // BREAKPOINT_ATTRIBUTES : 表示断点的属性
   const BREAKPOINT_ATTRIBUTES = attributesElement.ele('option', { name: 'BREAKPOINT_ATTRIBUTES' }).ele('value')
-  BREAKPOINT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: pick({ light: '#40252b', dark: '#40252b' }) })
+  BREAKPOINT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: vitesse('red', '50') })
   BREAKPOINT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: pick({ light: '#8c5b65', dark: '#8c5b65' }) })
 
   //   <option name="DEFAULT_METADATA">
