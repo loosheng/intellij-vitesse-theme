@@ -173,6 +173,10 @@
         "nonEditableBackground": "#F1F0E9"
       }
     },
+    "FileColor": {
+      "Yellow": "#F1F0E9",
+      "Green": "#1e754f10"
+    },
     "icons": {
       "ColorPalette": {
         "Actions.Grey": "#d1d5da",

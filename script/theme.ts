@@ -939,15 +939,15 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
             nonEditableBackground: background,
           },
         },
-        // 'FileColor': {
-        // Yellow: background,
-        // Green: '#092E15',
+        'FileColor': {
+          Yellow: background,
+          Green: vitesse('green', '10'),
         // Blue: '#00004D',
         // Violet: '#471747',
         // Orange: '#733000',
         // Rose: '#4D0F22',
         // Gray: '#062329',
-        // },
+        },
         'icons': {
           ColorPalette: {
             'Actions.Grey': pick({ light: primer.gray[3], dark: primer.gray[1] }),
