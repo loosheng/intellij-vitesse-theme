@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.2.7] - 2023-08-07
+
+### Optimize
+- breakpoint background
+- file status background color
+
 ## [0.2.6] - 2023-07-27
 
 ### Optimize
@@ -73,7 +79,8 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.6...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.7...HEAD
+[0.2.7]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.3...v0.2.5
 [0.2.3]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.2...v0.2.3
