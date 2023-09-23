@@ -72,3 +72,9 @@ Plugin based on the [IntelliJ Platform Plugin Template][template].
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
 
 [docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
+
+## Special thanks
+
+Thanks to [JetBrains](https://www.jetbrains.com/?from=intellij-vitesse-theme) for supporting free open source licenses.
+
+![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
