@@ -3,7 +3,7 @@ import pkg from '../package.json'
 import { getColors } from './primer'
 import { VitesseThemes } from './colors'
 
-interface ThemeOptions {
+export interface ThemeOptions {
   style: 'light' | 'dark'
   name: string
   soft?: boolean

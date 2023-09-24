@@ -1,8 +1,14 @@
 import { promises as fs } from 'node:fs'
-import getTheme from './theme'
+import getTheme, {ThemeOptions} from './theme'
+
+interface ThemeBuildMeta {
+  base: Omit<ThemeOptions, 'editorScheme'>
+  editorThemePath: string
+  UIPath: string
+}
 
 fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
-  const VitesseThemes = [
+  const VitesseThemes: ThemeBuildMeta[] = [
     {
       base: {
         name: 'Vitesse Light',
