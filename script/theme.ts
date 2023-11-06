@@ -210,215 +210,105 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // <option name="CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
   attributesElement.ele('option', { name: 'CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('string') })
 
-  //   <option name="DEFAULT_DOT">
-  //   <value>
-  //     <option name="FOREGROUND" value="BCBEC4" />
-  //   </value>
-  // </option>
+  // eg: .
+  //     ^
   attributesElement.ele('option', { name: 'DEFAULT_DOT' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
-  //   <option name="DEFAULT_COMMA">
-  //   <value>
-  //     <option name="FOREGROUND" value="c42c2c" />
-  //   </value>
-  // </option>
+
+  // eg: ,
+  //     ^
   const DEFAULT_COMMA = attributesElement.ele('option', { name: 'DEFAULT_COMMA' }).ele('value')
   DEFAULT_COMMA.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
 
-  //   <option name="DEFAULT_SEMICOLON">
-  //   <value>
-  //     <option name="FOREGROUND" value="c42c2c" />
-  //   </value>
-  // </option>
+  // eg: ;
+  //     ^
   const DEFAULT_SEMICOLON = attributesElement.ele('option', { name: 'DEFAULT_SEMICOLON' }).ele('value')
   DEFAULT_SEMICOLON.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
 
-  // 注释
-  //   <option name="DEFAULT_BLOCK_COMMENT">
-  //   <value>
-  //     <option name="FOREGROUND" value="699856" />
-  //   </value>
-  // </option>
-  //   <option name="DEFAULT_DOC_MARKUP">
-  //   <value>
-  //     <option name="FOREGROUND" value="68a67e" />
-  //   </value>
-  // </option>
-  //   <option name="DEFAULT_DOC_COMMENT_TAG">
-  //   <value>
-  //     <option name="FOREGROUND" value="67a37c" />
-  //     <option name="EFFECT_TYPE" value="1" />
-  //   </value>
-  // </option>
-
+  // eg: "/***/"
   attributesElement.ele('option', { name: 'DEFAULT_BLOCK_COMMENT' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
   attributesElement.ele('option', { name: 'DEFAULT_DOC_MARKUP' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
-  attributesElement.ele('option', { name: 'DEFAULT_DOC_COMMENT_TAG' }).ele('value').ele('option', { name: 'FOREGROUND', value: primary })
 
-  //   <option name="DEFAULT_DOC_COMMENT_TAG_VALUE">
-  //   <value>
-  //     <option name="FOREGROUND" value="7a5428" />
-  //   </value>
-  // </option>
+  // eg: "/** @tag <code>Markup<</code> */"
+  attributesElement.ele('option', { name: 'DEFAULT_DOC_COMMENT_TAG' }).ele('value').ele('option', { name: 'FOREGROUND', value: primary })
   const DEFAULT_DOC_COMMENT_TAG_VALUE = attributesElement.ele('option', { name: 'DEFAULT_DOC_COMMENT_TAG_VALUE' }).ele('value')
   DEFAULT_DOC_COMMENT_TAG_VALUE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
 
-  //   <option name="DEFAULT_TAG">
-  //   <value>
-  //     <option name="BACKGROUND" value="ff0000" />
-  //   </value>
-  // </option>
+  // eg: <p></p>
+  //      ^   ^
   const DEFAULT_TAG = attributesElement.ele('option', { name: 'DEFAULT_TAG' }).ele('value')
   DEFAULT_TAG.ele('option', { name: 'BACKGROUND', value: background })
   DEFAULT_TAG.ele('option', { name: 'FOREGROUND', value: primary })
 
-  // <option name="DEFAULT_CLASS_NAME">
-  //   <value>
-  //     <option name="FOREGROUND" value="39c8b0" />
-  //   </value>
-  // </option>
-  // <option name="DEFAULT_CLASS_REFERENCE">
-  //   <value>
-  //     <option name="FOREGROUND" value="39c8b0" />
-  //   </value>
-  // </option>
-
+  // eg: class A{}
+  //           ^
   attributesElement.ele('option', { name: 'DEFAULT_CLASS_NAME' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('class') })
   attributesElement.ele('option', { name: 'DEFAULT_CLASS_REFERENCE' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('class') })
 
-  // 常量
-  //   <option name="DEFAULT_CONSTANT">
-  //   <value>
-  //     <option name="FOREGROUND" value="d3d3d3" />
-  //   </value>
-  // </option>
+  // eg: const A = 'foo'
+  //           ^
   attributesElement.element('option', { name: 'DEFAULT_CONSTANT' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('constant') })
 
-  // 关键词
-  //   <option name="DEFAULT_KEYWORD">
-  //   <value>
-  //     <option name="FOREGROUND" value="499cd5" />
-  //   </value>
-  // </option>
-
+  // eg: if (a === 1) return for ...
+  //      ^              ^    ^
   attributesElement.ele('option', { name: 'DEFAULT_KEYWORD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('builtin') })
 
-  // 函数调用
-  //   <option name="DEFAULT_FUNCTION_CALL">
-  //   <value>
-  //     <option name="FOREGROUND" value="dbdbaa" />
-  //   </value>
-  // </option>
-  // 函数声明
-  // <option name="DEFAULT_FUNCTION_DECLARATION">
-  //   <value>
-  //     <option name="FOREGROUND" value="dcdcaa" />
-  //   </value>
-  // </option>
-  attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_CALL' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('function') })
+  // eg: function foo(){}
+  //                ^
   attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_DECLARATION' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('function') })
 
-  // 数字
-  // <option name="DEFAULT_NUMBER">
-  //     <value>
-  //       <option name="FOREGROUND" value="2aacb8" />
-  //     </value>
-  //   </option>
+  // eg: foo()
+  //       ^
+  attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_CALL' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('function') })
+
+  // eg: const a = 1
+  //               ^
   attributesElement.ele('option', { name: 'DEFAULT_NUMBER' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('number') })
-  // 字符串
-  //   <option name="DEFAULT_STRING">
-  //   <value>
-  //     <option name="FOREGROUND" value="6aab73" />
-  //   </value>
-  // </option>
+
+  // eg: const a = 'foo'
+  //                 ^
   attributesElement.ele('option', { name: 'DEFAULT_STRING' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('string') })
 
   // 标识符
-  //   <option name="DEFAULT_IDENTIFIER">
-  //   <value>
-  //     <option name="FOREGROUND" value="bcbec4" />
-  //   </value>
-  // </option>
-
   attributesElement.ele('option', { name: 'DEFAULT_IDENTIFIER' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
 
-  //       <option name="DEFAULT_GLOBAL_VARIABLE">
-  //         <value>
-  //           <option name="FOREGROUND" value="e80303" />
-  //         </value>
-  //       </option>
+  // var a = 1
+  //     ^
   attributesElement.ele('option', { name: 'DEFAULT_GLOBAL_VARIABLE' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
-  //   <option name="DEFAULT_ENTITY">
-  //   <value>
-  //     <option name="FOREGROUND" value="ff0000" />
-  //     <option name="FONT_TYPE" value="1" />
-  //   </value>
-  // </option>
+
   const DEFAULT_ENTITY = attributesElement.ele('option', { name: 'DEFAULT_ENTITY' }).ele('value')
   DEFAULT_ENTITY.ele('option', { name: 'FOREGROUND', value: primary })
   DEFAULT_ENTITY.ele('option', { name: 'FONT_TYPE', value: '1' })
 
-  //   <option name="DEFAULT_INSTANCE_FIELD">
-  //   <value>
-  //     <option name="FOREGROUND" value="0086B3" />
-  //   </value>
-  // </option>
-
+  // eg: const a = new A() a.foo
+  //                          ^
   attributesElement.ele('option', { name: 'DEFAULT_INSTANCE_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
-  //   <option name="DEFAULT_INTERFACE_NAME">
-  //   <value>
-  //     <option name="FOREGROUND" value="6440ba" />
-  //   </value>
-  // </option>
+
+  // eg: interface A {}
+  //               ^
   const DEFAULT_INTERFACE_NAME = attributesElement.ele('option', { name: 'DEFAULT_INTERFACE_NAME' }).ele('value')
   DEFAULT_INTERFACE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('interface') })
 
-  //   <option name="DEFAULT_STATIC_FIELD">
-  //   <value>
-  //     <option name="FOREGROUND" value="8231af" />
-  //     <option name="FONT_TYPE" value="2" />
-  //   </value>
-  // </option>
+  // eg: Number.MAX_SAFE_INTEGER
+  //                   ^
   attributesElement.ele('option', { name: 'DEFAULT_STATIC_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
-  // <option name="DEFAULT_STATIC_METHOD" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
+
+  // eg: Number.isNaN()
+  //               ^
   attributesElement.ele('option', { name: 'DEFAULT_STATIC_METHOD', baseAttributes: 'DEFAULT_FUNCTION_DECLARATION' })
-  //   <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
-  //   <value>
-  //     <option name="BACKGROUND" value="2b2d30" />
-  //   </value>
-  // </option>
+
+  // eg: <span>{{ a }}</span>
+  //              ^
   attributesElement.ele('option', { name: 'DEFAULT_TEMPLATE_LANGUAGE_COLOR' }).ele('value').ele('option', { name: 'BACKGROUND', value: background })
 
-  //   <option name="DEFAULT_ATTRIBUTE">
-  //   <value>
-  //     <option name="FOREGROUND" value="994f4f" />
-  //     <option name="FONT_TYPE" value="1" />
-  //   </value>
-  // </option>
-
+  // eg: <span title='foo'></span>
+  //             ^
   const DEFAULT_ATTRIBUTE = attributesElement.ele('option', { name: 'DEFAULT_ATTRIBUTE' }).ele('value')
   DEFAULT_ATTRIBUTE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
-
-  //   <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
-  //   <value>
-  //     <option name="BACKGROUND" value="114957" />
-  //     <option name="EFFECT_COLOR" value="165e70" />
-  //     <option name="ERROR_STRIPE_COLOR" value="72d6d6" />
-  //   </value>
-  // </option>
 
   const TEXT_SEARCH_RESULT_ATTRIBUTES = attributesElement.ele('option', { name: 'TEXT_SEARCH_RESULT_ATTRIBUTES' }).ele('value')
   TEXT_SEARCH_RESULT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: pick({ light: '#e6cc7766', dark: '#e6cc7744' }) })
   // TEXT_SEARCH_RESULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: foreground })
 
-  //   <option name="DEFAULT_INVALID_STRING_ESCAPE">
-  //   <value>
-  //     <option name="FOREGROUND" value="6a8759" />
-  //     <option name="EFFECT_COLOR" value="aa3434" />
-  //     <option name="EFFECT_TYPE" value="2" />
-  //   </value>
-  // </option>
-  // <option name="DEFAULT_REASSIGNED_LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
-  // <option name="DEFAULT_REASSIGNED_PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
   const DEFAULT_INVALID_STRING_ESCAPE = attributesElement.ele('option', { name: 'DEFAULT_INVALID_STRING_ESCAPE' }).ele('value')
   DEFAULT_INVALID_STRING_ESCAPE.ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
   DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_COLOR', value: vitesse('red') })
@@ -454,25 +344,11 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   attributesElement.ele('option', { name: 'HTML_ATTRIBUTE_NAME', baseAttributes: 'DEFAULT_ATTRIBUTE' })
   // <option name="HTML_ATTRIBUTE_VALUE" baseAttributes="DEFAULT_STRING" />
   attributesElement.ele('option', { name: 'HTML_ATTRIBUTE_VALUE', baseAttributes: 'DEFAULT_STRING' })
-  // <option name="HTML_TAG">
-  //   <value>
-  //     <option name="FOREGROUND" value="959da5" />
-  //     <option name="BACKGROUND" value="222222" />
-  //   </value>
-  // </option>
+
   const HTML_TAG = attributesElement.ele('option', { name: 'HTML_TAG' }).ele('value')
   HTML_TAG.ele('option', { name: 'FOREGROUND', value: primer.gray[5] })
   HTML_TAG.ele('option', { name: 'BACKGROUND', value: background })
-  // <option name="HTML_TAG_NAME">
-  //   <value>
-  //     <option name="FOREGROUND" value="4d9375" />
-  //   </value>
-  // </option>
-  //   <option name="HTML_CUSTOM_TAG_NAME">
-  //   <value>
-  //     <option name="FOREGROUND" value="4530d7" />
-  //   </value>
-  // </option>
+
   const HTML_TAG_NAME = attributesElement.ele('option', { name: 'HTML_TAG_NAME' }).ele('value')
   HTML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
   const HTML_CUSTOM_TAG_NAME = attributesElement.ele('option', { name: 'HTML_CUSTOM_TAG_NAME' }).ele('value')
