@@ -39,6 +39,10 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
       ? vitesse('lowActiveBackground')
       : vitesse('activeBackground')
 
+  const punctuation = black
+      ? vitesse('punctuation', 'cc')
+      : vitesse('punctuation')
+
   const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
   const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
   const selectionBackground = pick({ light: '#22222215', dark: '#eeeeee15' })
@@ -322,21 +326,10 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   attributesElement.ele('option', { name: 'DEFAULT_REASSIGNED_LOCAL_VARIABLE', baseAttributes: 'DEFAULT_LOCAL_VARIABLE' })
   attributesElement.ele('option', { name: 'DEFAULT_REASSIGNED_PARAMETER', baseAttributes: 'DEFAULT_PARAMETER' })
 
-  //   <option name="BAD_CHARACTER">
-  //   <value>
-  //     <option name="EFFECT_COLOR" value="af3c3c" />
-  //     <option name="EFFECT_TYPE" value="2" />
-  //   </value>
-  // </option>
   const BAD_CHARACTER = attributesElement.ele('option', { name: 'BAD_CHARACTER' }).ele('value')
   BAD_CHARACTER.ele('option', { name: 'EFFECT_COLOR', value: vitesse('red') })
   BAD_CHARACTER.ele('option', { name: 'EFFECT_TYPE', value: '2' })
 
-  //   <option name="DEFAULT_OPERATION_SIGN">
-  //   <value>
-  //     <option name="FOREGROUND" value="c42c2c" />
-  //   </value>
-  // </option>
   const DEFAULT_OPERATION_SIGN = attributesElement.ele('option', { name: 'DEFAULT_OPERATION_SIGN' }).ele('value')
   DEFAULT_OPERATION_SIGN.ele('option', { name: 'FOREGROUND', value: vitesse('operator') })
 
@@ -619,6 +612,26 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const INACTIVE_HYPERLINK_ATTRIBUTES = attributesElement.ele('option', { name: 'INACTIVE_HYPERLINK_ATTRIBUTES' }).ele('value')
   INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: vitesse('comment') })
   INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '1' })
+
+  // inline parameter hint
+  const INLINE_PARAMETER_HINT = attributesElement.ele('option', { name: 'INLINE_PARAMETER_HINT' }).ele('value')
+  INLINE_PARAMETER_HINT.ele('option', { name: 'FOREGROUND', value: punctuation })
+  INLINE_PARAMETER_HINT.ele('option', { name: 'BACKGROUND', value: '#00000000' })
+
+  const INLINE_PARAMETER_HINT_CURRENT = attributesElement.ele('option', { name: 'INLINE_PARAMETER_HINT_CURRENT' }).ele('value')
+  INLINE_PARAMETER_HINT_CURRENT.ele('option', { name: 'FOREGROUND', value: punctuation })
+  INLINE_PARAMETER_HINT_CURRENT.ele('option', { name: 'BACKGROUND', value: '#00000000' })
+
+  const INLINE_PARAMETER_HINT_HIGHLIGHTED = attributesElement.ele('option', { name: 'INLINE_PARAMETER_HINT_HIGHLIGHTED' }).ele('value')
+  INLINE_PARAMETER_HINT_HIGHLIGHTED.ele('option', { name: 'FOREGROUND', value: punctuation })
+  INLINE_PARAMETER_HINT_HIGHLIGHTED.ele('option', { name: 'BACKGROUND', value: '#00000000' })
+
+  // <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="ad1010" />
+  // <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="ad1010" />
+  // <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="ad1010" />
+  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_DEFAULT', value: '#00000000' })
+  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_FOCUSED', value: '#00000000' })
+  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_HOVERED', value: '#00000000' })
 
   return {
     editorTheme: theme.end({ pretty: true }),
