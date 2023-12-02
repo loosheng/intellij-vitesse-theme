@@ -5,7 +5,7 @@
 ## [Unreleased]
 
 ## [0.2.8] - 2023-12-02
-###Optimize
+### Optimize
 
 - Update `Inlay Hints` style
 - Better background color when UI panel is selected
