@@ -4,6 +4,15 @@
 
 ## [Unreleased]
 
+## [0.2.8] - 2023-12-02
+###Optimize
+
+- Update `Inlay Hints` style
+- Better background color when UI panel is selected
+
+### Other
+- Synchronize the script with the [vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse)
+
 ## [0.2.7] - 2023-08-07
 
 ### Optimize
@@ -79,7 +88,8 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.7...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.8...HEAD
+[0.2.8]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.7...v0.2.8
 [0.2.7]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.3...v0.2.5
