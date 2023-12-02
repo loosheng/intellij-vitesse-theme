@@ -1,8 +1,9 @@
 import { promises as fs } from 'node:fs'
-import getTheme, {ThemeOptions} from './theme'
+import getTheme from './theme'
+import {GetThemeOptions} from "./helper";
 
 interface ThemeBuildMeta {
-  base: Omit<ThemeOptions, 'editorScheme'>
+  base: Omit<GetThemeOptions, 'editorScheme'>
   editorThemePath: string
   UIPath: string
 }
@@ -12,7 +13,7 @@ fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
     {
       base: {
         name: 'Vitesse Light',
-        style: 'light',
+        color: 'light',
       },
       editorThemePath: './src/main/resources/themes/vitesse.light.xml',
       UIPath: './src/main/resources/themes/vitesse.light.theme.json',
@@ -20,7 +21,7 @@ fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
     {
       base: {
         name: 'Vitesse Light Soft',
-        style: 'light',
+        color: 'light',
         soft: true,
       },
       editorThemePath: './src/main/resources/themes/vitesse.light.soft.xml',
@@ -29,7 +30,7 @@ fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
     {
       base: {
         name: 'Vitesse Dark',
-        style: 'dark',
+        color: 'dark',
       },
       editorThemePath: './src/main/resources/themes/vitesse.dark.xml',
       UIPath: './src/main/resources/themes/vitesse.dark.theme.json',
@@ -37,7 +38,7 @@ fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
     {
       base: {
         name: 'Vitesse Dark Soft',
-        style: 'dark',
+        color: 'dark',
         soft: true,
       },
       editorThemePath: './src/main/resources/themes/vitesse.dark.soft.xml',
@@ -46,7 +47,7 @@ fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
     {
       base: {
         name: 'Vitesse Black',
-        style: 'dark',
+        color: 'dark',
         black: true,
       },
       editorThemePath: './src/main/resources/themes/vitesse.black.xml',
@@ -68,4 +69,7 @@ fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
 
   return Promise.all(promises)
 })
-  .catch(() => process.exit(1))
+  .catch((e) => {
+    console.error(e)
+    process.exit(1)
+  })

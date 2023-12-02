@@ -3,7 +3,7 @@
   <colors>
     <option name="ADDED_LINES_COLOR" value="#4d9375"/>
     <option name="GUTTER_BACKGROUND" value="#222222"/>
-    <option name="SELECTION_BACKGROUND" value="#666666"/>
+    <option name="SELECTION_BACKGROUND" value="#383838"/>
     <option name="SELECTION_FOREGROUND"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="#dedcd550"/>
     <option name="ANNOTATIONS_COLOR" value="#758575dd"/>
@@ -12,7 +12,7 @@
     <option name="CARET_ROW_COLOR" value="#292929"/>
     <option name="CONSOLE_BACKGROUND_KEY" value="#222222"/>
     <option name="DELETED_LINES_COLOR" value="#cb7676"/>
-    <option name="DIFF_SEPARATORS_BACKGROUND" value="#181818"/>
+    <option name="DIFF_SEPARATORS_BACKGROUND" value="#292929"/>
     <option name="DOCUMENTATION_COLOR" value="#222222"/>
     <option name="DOC_COMMENT_GUIDE" value="#758575dd"/>
     <option name="DOC_COMMENT_LINK" value="#758575dd"/>
@@ -74,7 +74,7 @@
     <option name="BREADCRUMBS_CURRENT">
       <value>
         <option name="FOREGROUND" value="#dbd7caee"/>
-        <option name="BACKGROUND" value="#181818"/>
+        <option name="BACKGROUND" value="#292929"/>
       </value>
     </option>
     <option name="BREADCRUMBS_DEFAULT">

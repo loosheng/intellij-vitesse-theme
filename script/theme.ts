@@ -1,57 +1,36 @@
 import builder from 'xmlbuilder'
 import pkg from '../package.json'
-import { getColors } from './primer'
-import { VitesseThemes } from './colors'
+import {createThemeHelpers, GetThemeOptions} from "./helper";
 
-export interface ThemeOptions {
-  style: 'light' | 'dark'
-  name: string
-  soft?: boolean
-  black?: boolean
-  editorScheme: string
-}
-export default function getEditorSchemeTheme({ style, name, soft = false, black = false, editorScheme }: ThemeOptions) {
+export default function getEditorSchemeTheme(options: GetThemeOptions) {
   // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
-  const pick = options => options[style]
+  const {
+    pick,
+    v,
+    colors,
+  } = createThemeHelpers(options)
 
-  const vitesse = (key: keyof typeof VitesseThemes, op = '') => pick({ light: VitesseThemes[key][1] + op, dark: VitesseThemes[key][0] + op })
+  const foreground = v('foreground')
+  const secondaryForeground = v('secondaryForeground')
+  const activeForeground = v('activeForeground')
+  const primary = v('primary')
 
-  const primer = getColors(style)
+  const border = v('border')
+  const background = v('background')
+  const activeBackground = v('activeBackground')
 
-  const foreground = black
-    ? '#dbd7cacc'
-    : vitesse('foreground')
-  const secondaryForeground = vitesse('secondaryForeground')
-  const activeForeground = vitesse('activeForeground')
-  const primary = vitesse('primary')
+  const punctuation = v('punctuation')
 
-  const border = soft
-    ? vitesse('lowBorder')
-    : vitesse('border')
-  const background = black
-    ? '#000000'
-    : soft
-      ? vitesse('lowBackground')
-      : vitesse('background')
-  const activeBackground = black
-    ? '#121212'
-    : soft
-      ? vitesse('lowActiveBackground')
-      : vitesse('activeBackground')
+  const selectionBackground = v('selectionBackground')
+  const selectionBackgroundActive = v('selectionBackgroundActive')
+  const selectionBackgroundInActive = v('selectionBackgroundInActive')
 
-  const punctuation = black
-      ? vitesse('punctuation', 'cc')
-      : vitesse('punctuation')
-
-  const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
-  const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
-  const selectionBackground = pick({ light: '#22222215', dark: '#eeeeee15' })
-  const selectionBackground2 = pick({ light: '#cccccc', dark: '#666666' })
+  const selectionBackground2 = pick({ light: '#d3d3d3', dark: '#383838' })
 
   // root element
   const theme = builder.create('scheme', { encoding: 'utf-8' })
-  theme.att('name', name)
-  theme.att('parent_scheme', style === 'light' ? 'Default' : 'Darcula')
+  theme.att('name', options.name)
+  theme.att('parent_scheme', options.color === 'light' ? 'Default' : 'Darcula')
   theme.att('version', '1')
   /**
   ADDED_LINES_COLOR: 表示版本控制中新增行的颜色
@@ -99,7 +78,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   **/
   const colorsElement = theme.ele('colors')
   // ADDED_LINES_COLOR  表示版本控制中新增行的颜色
-  colorsElement.ele('option', { name: 'ADDED_LINES_COLOR', value: vitesse('green') })
+  colorsElement.ele('option', { name: 'ADDED_LINES_COLOR', value: v('green') })
   // GUTTER_BACKGROUND 编辑区域左侧行号区域背景色
   colorsElement.ele('option', { name: 'GUTTER_BACKGROUND', value: background })
   // SELECTION_BACKGROUND 选中区域背景色
@@ -107,48 +86,48 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // SELECTION_FOREGROUND 选中区域前景色
   colorsElement.ele('option', { name: 'SELECTION_FOREGROUND' })
   // <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="a9b837" />
-  colorsElement.ele('option', { name: 'FILESTATUS_IDEA_FILESTATUS_IGNORED', value: vitesse('ignored') })
-  colorsElement.ele('option', { name: 'ANNOTATIONS_COLOR', value: vitesse('comment') })
-  colorsElement.ele('option', { name: 'ANNOTATIONS_LAST_COMMIT_COLOR', value: vitesse('comment') })
+  colorsElement.ele('option', { name: 'FILESTATUS_IDEA_FILESTATUS_IGNORED', value: v('ignored') })
+  colorsElement.ele('option', { name: 'ANNOTATIONS_COLOR', value: v('comment') })
+  colorsElement.ele('option', { name: 'ANNOTATIONS_LAST_COMMIT_COLOR', value: v('comment') })
   colorsElement.ele('option', { name: 'CARET_COLOR', value: pick({ light: '#000000', dark: '#aeafad' }) })
   colorsElement.ele('option', { name: 'CARET_ROW_COLOR', value: activeBackground })
   colorsElement.ele('option', { name: 'CONSOLE_BACKGROUND_KEY', value: background })
-  colorsElement.ele('option', { name: 'DELETED_LINES_COLOR', value: vitesse('red') })
-  colorsElement.ele('option', { name: 'DIFF_SEPARATORS_BACKGROUND', value: vitesse('activeBackground') })
+  colorsElement.ele('option', { name: 'DELETED_LINES_COLOR', value: v('red') })
+  colorsElement.ele('option', { name: 'DIFF_SEPARATORS_BACKGROUND', value: v('activeBackground') })
   colorsElement.ele('option', { name: 'DOCUMENTATION_COLOR', value: background })
-  colorsElement.ele('option', { name: 'DOC_COMMENT_GUIDE', value: vitesse('comment') })
-  colorsElement.ele('option', { name: 'DOC_COMMENT_LINK', value: vitesse('comment') })
-  colorsElement.ele('option', { name: 'ERROR_HINT', value: vitesse('red') })
+  colorsElement.ele('option', { name: 'DOC_COMMENT_GUIDE', value: v('comment') })
+  colorsElement.ele('option', { name: 'DOC_COMMENT_LINK', value: v('comment') })
+  colorsElement.ele('option', { name: 'ERROR_HINT', value: v('red') })
   colorsElement.ele('option', { name: 'FOLDED_TEXT_BORDER_COLOR', value: activeBackground })
-  colorsElement.ele('option', { name: 'IGNORED_ADDED_LINES_BORDER_COLOR', value: vitesse('green') })
-  colorsElement.ele('option', { name: 'IGNORED_DELETED_LINES_BORDER_COLOR', value: vitesse('red') })
-  colorsElement.ele('option', { name: 'IGNORED_MODIFIED_LINES_BORDER_COLOR', value: vitesse('blue') })
-  colorsElement.ele('option', { name: 'INDENT_GUIDE', value: pick({ light: primer.gray[2], dark: primer.gray[1] }) })
+  colorsElement.ele('option', { name: 'IGNORED_ADDED_LINES_BORDER_COLOR', value: v('green') })
+  colorsElement.ele('option', { name: 'IGNORED_DELETED_LINES_BORDER_COLOR', value: v('red') })
+  colorsElement.ele('option', { name: 'IGNORED_MODIFIED_LINES_BORDER_COLOR', value: v('blue') })
+  colorsElement.ele('option', { name: 'INDENT_GUIDE', value: pick({ light: colors.gray[2], dark: colors.gray[1] }) })
   colorsElement.ele('option', { name: 'INFORMATION_HINT', value: background })
-  colorsElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_DEFAULT', value: vitesse('primary') })
-  colorsElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_FOCUSED', value: vitesse('primary') })
-  colorsElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_HOVERED', value: vitesse('primary') })
-  colorsElement.ele('option', { name: 'LINE_NUMBERS_COLOR', value: vitesse('ignored') })
+  colorsElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_DEFAULT', value: v('primary') })
+  colorsElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_FOCUSED', value: v('primary') })
+  colorsElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_HOVERED', value: v('primary') })
+  colorsElement.ele('option', { name: 'LINE_NUMBERS_COLOR', value: v('ignored') })
   colorsElement.ele('option', { name: 'LINE_NUMBER_ON_CARET_ROW_COLOR', value: activeForeground })
   colorsElement.ele('option', { name: 'LOOKUP_COLOR', value: background })
-  colorsElement.ele('option', { name: 'METHOD_SEPARATORS_COLOR', value: primer.gray[3] })
-  colorsElement.ele('option', { name: 'MODIFIED_LINES_COLOR', value: vitesse('blue') })
+  colorsElement.ele('option', { name: 'METHOD_SEPARATORS_COLOR', value: colors.gray[3] })
+  colorsElement.ele('option', { name: 'MODIFIED_LINES_COLOR', value: v('blue') })
   colorsElement.ele('option', { name: 'NOTIFICATION_BACKGROUND', value: activeBackground })
   colorsElement.ele('option', { name: 'PROMOTION_PANE', value: activeBackground })
-  colorsElement.ele('option', { name: 'QUESTION_HINT', value: vitesse('yellow') })
+  colorsElement.ele('option', { name: 'QUESTION_HINT', value: v('yellow') })
   colorsElement.ele('option', { name: 'RECENT_LOCATIONS_SELECTION', value: activeBackground })
-  colorsElement.ele('option', { name: 'RIGHT_MARGIN_COLOR', value: vitesse('ignored') })
-  colorsElement.ele('option', { name: 'SELECTED_INDENT_GUIDE', value: vitesse('primary') })
-  colorsElement.ele('option', { name: 'ScrollBar.Mac.hoverThumbColor', value: vitesse('ignored') })
-  colorsElement.ele('option', { name: 'ScrollBar.Mac.thumbColor', value: vitesse('faded') })
-  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_1', value: vitesse('green') })
-  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_2', value: vitesse('blue') })
-  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_3', value: vitesse('yellow') })
-  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_4', value: vitesse('red') })
-  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_5', value: vitesse('orange') })
-  colorsElement.ele('option', { name: 'VISUAL_INDENT_GUIDE', value: vitesse('ignored') })
-  colorsElement.ele('option', { name: 'WHITESPACES', value: vitesse('ignored') })
-  colorsElement.ele('option', { name: 'WHITESPACES_MODIFIED_LINES_COLOR', value: vitesse('ignored') })
+  colorsElement.ele('option', { name: 'RIGHT_MARGIN_COLOR', value: v('ignored') })
+  colorsElement.ele('option', { name: 'SELECTED_INDENT_GUIDE', value: v('primary') })
+  colorsElement.ele('option', { name: 'ScrollBar.Mac.hoverThumbColor', value: v('ignored') })
+  colorsElement.ele('option', { name: 'ScrollBar.Mac.thumbColor', value: v('faded') })
+  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_1', value: v('green') })
+  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_2', value: v('blue') })
+  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_3', value: v('yellow') })
+  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_4', value: v('red') })
+  colorsElement.ele('option', { name: 'VCS_ANNOTATIONS_COLOR_5', value: v('orange') })
+  colorsElement.ele('option', { name: 'VISUAL_INDENT_GUIDE', value: v('ignored') })
+  colorsElement.ele('option', { name: 'WHITESPACES', value: v('ignored') })
+  colorsElement.ele('option', { name: 'WHITESPACES_MODIFIED_LINES_COLOR', value: v('ignored') })
 
   // attributes
   const attributesElement = theme.ele('attributes')
@@ -164,8 +143,8 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const ERRORS_ATTRIBUTES = attributesElement.ele('option', { name: 'ERRORS_ATTRIBUTES' }).ele('value')
-  ERRORS_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: pick({ light: primer.red[5], dark: primer.red[4] }) })
-  ERRORS_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: pick({ light: primer.red[5], dark: primer.red[4] }) })
+  ERRORS_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: pick({ light: colors.red[5], dark: colors.red[4] }) })
+  ERRORS_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: pick({ light: colors.red[5], dark: colors.red[4] }) })
   ERRORS_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '2' })
   //   <option name="WRONG_REFERENCES_ATTRIBUTES">
   //   <value>
@@ -173,7 +152,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const WRONG_REFERENCES_ATTRIBUTES = attributesElement.ele('option', { name: 'WRONG_REFERENCES_ATTRIBUTES' }).ele('value')
-  WRONG_REFERENCES_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: pick({ light: primer.red[5], dark: primer.red[4] }) })
+  WRONG_REFERENCES_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: pick({ light: colors.red[5], dark: colors.red[4] }) })
 
   attributesElement.ele('option', { name: 'ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES' }).ele('value')
   // ANNOTATION_NAME_ATTRIBUTES: 表示注释名称的属性
@@ -181,24 +160,24 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
   // BREADCRUMBS_CURRENT : 表示当前面包屑的属性
   const BREADCRUMBS_CURRENT = attributesElement.ele('option', { name: 'BREADCRUMBS_CURRENT' }).ele('value')
-  BREADCRUMBS_CURRENT.ele('option', { name: 'FOREGROUND', value: vitesse('foreground') })
-  BREADCRUMBS_CURRENT.ele('option', { name: 'BACKGROUND', value: vitesse('activeBackground') })
+  BREADCRUMBS_CURRENT.ele('option', { name: 'FOREGROUND', value: v('foreground') })
+  BREADCRUMBS_CURRENT.ele('option', { name: 'BACKGROUND', value: v('activeBackground') })
 
   // BREADCRUMBS_DEFAULT : 表示默认面包屑的属性
   const BREADCRUMBS_DEFAULT = attributesElement.ele('option', { name: 'BREADCRUMBS_DEFAULT' }).ele('value')
-  BREADCRUMBS_DEFAULT.ele('option', { name: 'FOREGROUND', value: primer.gray[5] })
+  BREADCRUMBS_DEFAULT.ele('option', { name: 'FOREGROUND', value: colors.gray[5] })
 
   // BREADCRUMBS_HOVERED : 表示悬停面包屑的属性
   const BREADCRUMBS_HOVERED = attributesElement.ele('option', { name: 'BREADCRUMBS_HOVERED' }).ele('value')
-  BREADCRUMBS_HOVERED.ele('option', { name: 'FOREGROUND', value: vitesse('foreground') })
+  BREADCRUMBS_HOVERED.ele('option', { name: 'FOREGROUND', value: v('foreground') })
 
   // BREADCRUMBS_INACTIVE : 表示不活动面包屑的属性
   const BREADCRUMBS_INACTIVE = attributesElement.ele('option', { name: 'BREADCRUMBS_INACTIVE' }).ele('value')
-  BREADCRUMBS_INACTIVE.ele('option', { name: 'FOREGROUND', value: primer.gray[4] })
+  BREADCRUMBS_INACTIVE.ele('option', { name: 'FOREGROUND', value: colors.gray[4] })
 
   // BREAKPOINT_ATTRIBUTES : 表示断点的属性
   const BREAKPOINT_ATTRIBUTES = attributesElement.ele('option', { name: 'BREAKPOINT_ATTRIBUTES' }).ele('value')
-  BREAKPOINT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: vitesse('red', '50') })
+  BREAKPOINT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: v('red', '50') })
   BREAKPOINT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: pick({ light: '#8c5b65', dark: '#8c5b65' }) })
 
   //   <option name="DEFAULT_METADATA">
@@ -207,35 +186,35 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const DEFAULT_METADATA = attributesElement.ele('option', { name: 'DEFAULT_METADATA' }).ele('value')
-  DEFAULT_METADATA.ele('option', { name: 'FOREGROUND', value: vitesse('decorator') })
+  DEFAULT_METADATA.ele('option', { name: 'FOREGROUND', value: v('decorator') })
 
   // <option name="CUSTOM_STRING_ATTRIBUTES" baseAttributes="DEFAULT_STRING" />
-  attributesElement.ele('option', { name: 'CUSTOM_STRING_ATTRIBUTES' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('string') })
+  attributesElement.ele('option', { name: 'CUSTOM_STRING_ATTRIBUTES' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('string') })
   // <option name="CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES" baseAttributes="DEFAULT_VALID_STRING_ESCAPE" />
-  attributesElement.ele('option', { name: 'CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('string') })
+  attributesElement.ele('option', { name: 'CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('string') })
 
   // eg: .
   //     ^
-  attributesElement.ele('option', { name: 'DEFAULT_DOT' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
+  attributesElement.ele('option', { name: 'DEFAULT_DOT' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('punctuation') })
 
   // eg: ,
   //     ^
   const DEFAULT_COMMA = attributesElement.ele('option', { name: 'DEFAULT_COMMA' }).ele('value')
-  DEFAULT_COMMA.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
+  DEFAULT_COMMA.ele('option', { name: 'FOREGROUND', value: v('punctuation') })
 
   // eg: ;
   //     ^
   const DEFAULT_SEMICOLON = attributesElement.ele('option', { name: 'DEFAULT_SEMICOLON' }).ele('value')
-  DEFAULT_SEMICOLON.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
+  DEFAULT_SEMICOLON.ele('option', { name: 'FOREGROUND', value: v('punctuation') })
 
   // eg: "/***/"
-  attributesElement.ele('option', { name: 'DEFAULT_BLOCK_COMMENT' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
-  attributesElement.ele('option', { name: 'DEFAULT_DOC_MARKUP' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
+  attributesElement.ele('option', { name: 'DEFAULT_BLOCK_COMMENT' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('comment') })
+  attributesElement.ele('option', { name: 'DEFAULT_DOC_MARKUP' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('comment') })
 
   // eg: "/** @tag <code>Markup<</code> */"
   attributesElement.ele('option', { name: 'DEFAULT_DOC_COMMENT_TAG' }).ele('value').ele('option', { name: 'FOREGROUND', value: primary })
   const DEFAULT_DOC_COMMENT_TAG_VALUE = attributesElement.ele('option', { name: 'DEFAULT_DOC_COMMENT_TAG_VALUE' }).ele('value')
-  DEFAULT_DOC_COMMENT_TAG_VALUE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  DEFAULT_DOC_COMMENT_TAG_VALUE.ele('option', { name: 'FOREGROUND', value: v('variable') })
 
   // eg: <p></p>
   //      ^   ^
@@ -245,39 +224,39 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
   // eg: class A{}
   //           ^
-  attributesElement.ele('option', { name: 'DEFAULT_CLASS_NAME' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('class') })
-  attributesElement.ele('option', { name: 'DEFAULT_CLASS_REFERENCE' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('class') })
+  attributesElement.ele('option', { name: 'DEFAULT_CLASS_NAME' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('class') })
+  attributesElement.ele('option', { name: 'DEFAULT_CLASS_REFERENCE' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('class') })
 
   // eg: const A = 'foo'
   //           ^
-  attributesElement.element('option', { name: 'DEFAULT_CONSTANT' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('constant') })
+  attributesElement.element('option', { name: 'DEFAULT_CONSTANT' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('constant') })
 
   // eg: if (a === 1) return for ...
   //      ^              ^    ^
-  attributesElement.ele('option', { name: 'DEFAULT_KEYWORD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('builtin') })
+  attributesElement.ele('option', { name: 'DEFAULT_KEYWORD' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('builtin') })
 
   // eg: function foo(){}
   //                ^
-  attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_DECLARATION' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('function') })
+  attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_DECLARATION' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('function') })
 
   // eg: foo()
   //       ^
-  attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_CALL' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('function') })
+  attributesElement.ele('option', { name: 'DEFAULT_FUNCTION_CALL' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('function') })
 
   // eg: const a = 1
   //               ^
-  attributesElement.ele('option', { name: 'DEFAULT_NUMBER' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('number') })
+  attributesElement.ele('option', { name: 'DEFAULT_NUMBER' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('number') })
 
   // eg: const a = 'foo'
   //                 ^
-  attributesElement.ele('option', { name: 'DEFAULT_STRING' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('string') })
+  attributesElement.ele('option', { name: 'DEFAULT_STRING' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('string') })
 
   // 标识符
-  attributesElement.ele('option', { name: 'DEFAULT_IDENTIFIER' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
+  attributesElement.ele('option', { name: 'DEFAULT_IDENTIFIER' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('property') })
 
   // var a = 1
   //     ^
-  attributesElement.ele('option', { name: 'DEFAULT_GLOBAL_VARIABLE' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  attributesElement.ele('option', { name: 'DEFAULT_GLOBAL_VARIABLE' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('variable') })
 
   const DEFAULT_ENTITY = attributesElement.ele('option', { name: 'DEFAULT_ENTITY' }).ele('value')
   DEFAULT_ENTITY.ele('option', { name: 'FOREGROUND', value: primary })
@@ -285,16 +264,16 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
 
   // eg: const a = new A() a.foo
   //                          ^
-  attributesElement.ele('option', { name: 'DEFAULT_INSTANCE_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
+  attributesElement.ele('option', { name: 'DEFAULT_INSTANCE_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('property') })
 
   // eg: interface A {}
   //               ^
   const DEFAULT_INTERFACE_NAME = attributesElement.ele('option', { name: 'DEFAULT_INTERFACE_NAME' }).ele('value')
-  DEFAULT_INTERFACE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('interface') })
+  DEFAULT_INTERFACE_NAME.ele('option', { name: 'FOREGROUND', value: v('interface') })
 
   // eg: Number.MAX_SAFE_INTEGER
   //                   ^
-  attributesElement.ele('option', { name: 'DEFAULT_STATIC_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: vitesse('property') })
+  attributesElement.ele('option', { name: 'DEFAULT_STATIC_FIELD' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('property') })
 
   // eg: Number.isNaN()
   //               ^
@@ -307,31 +286,31 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // eg: <span title='foo'></span>
   //             ^
   const DEFAULT_ATTRIBUTE = attributesElement.ele('option', { name: 'DEFAULT_ATTRIBUTE' }).ele('value')
-  DEFAULT_ATTRIBUTE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  DEFAULT_ATTRIBUTE.ele('option', { name: 'FOREGROUND', value: v('variable') })
 
   const TEXT_SEARCH_RESULT_ATTRIBUTES = attributesElement.ele('option', { name: 'TEXT_SEARCH_RESULT_ATTRIBUTES' }).ele('value')
   TEXT_SEARCH_RESULT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: pick({ light: '#e6cc7766', dark: '#e6cc7744' }) })
   // TEXT_SEARCH_RESULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: foreground })
 
   const DEFAULT_INVALID_STRING_ESCAPE = attributesElement.ele('option', { name: 'DEFAULT_INVALID_STRING_ESCAPE' }).ele('value')
-  DEFAULT_INVALID_STRING_ESCAPE.ele('option', { name: 'FOREGROUND', value: vitesse('comment') })
-  DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_COLOR', value: vitesse('red') })
+  DEFAULT_INVALID_STRING_ESCAPE.ele('option', { name: 'FOREGROUND', value: v('comment') })
+  DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_COLOR', value: v('red') })
   DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_TYPE', value: '2' })
 
   const DEFAULT_LOCAL_VARIABLE = attributesElement.ele('option', { name: 'DEFAULT_LOCAL_VARIABLE' }).ele('value')
-  DEFAULT_LOCAL_VARIABLE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  DEFAULT_LOCAL_VARIABLE.ele('option', { name: 'FOREGROUND', value: v('variable') })
   const DEFAULT_PARAMETER = attributesElement.ele('option', { name: 'DEFAULT_PARAMETER' }).ele('value')
-  DEFAULT_PARAMETER.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  DEFAULT_PARAMETER.ele('option', { name: 'FOREGROUND', value: v('variable') })
 
   attributesElement.ele('option', { name: 'DEFAULT_REASSIGNED_LOCAL_VARIABLE', baseAttributes: 'DEFAULT_LOCAL_VARIABLE' })
   attributesElement.ele('option', { name: 'DEFAULT_REASSIGNED_PARAMETER', baseAttributes: 'DEFAULT_PARAMETER' })
 
   const BAD_CHARACTER = attributesElement.ele('option', { name: 'BAD_CHARACTER' }).ele('value')
-  BAD_CHARACTER.ele('option', { name: 'EFFECT_COLOR', value: vitesse('red') })
+  BAD_CHARACTER.ele('option', { name: 'EFFECT_COLOR', value: v('red') })
   BAD_CHARACTER.ele('option', { name: 'EFFECT_TYPE', value: '2' })
 
   const DEFAULT_OPERATION_SIGN = attributesElement.ele('option', { name: 'DEFAULT_OPERATION_SIGN' }).ele('value')
-  DEFAULT_OPERATION_SIGN.ele('option', { name: 'FOREGROUND', value: vitesse('operator') })
+  DEFAULT_OPERATION_SIGN.ele('option', { name: 'FOREGROUND', value: v('operator') })
 
   // <option name="HTML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
   attributesElement.ele('option', { name: 'HTML_ATTRIBUTE_NAME', baseAttributes: 'DEFAULT_ATTRIBUTE' })
@@ -339,13 +318,13 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   attributesElement.ele('option', { name: 'HTML_ATTRIBUTE_VALUE', baseAttributes: 'DEFAULT_STRING' })
 
   const HTML_TAG = attributesElement.ele('option', { name: 'HTML_TAG' }).ele('value')
-  HTML_TAG.ele('option', { name: 'FOREGROUND', value: primer.gray[5] })
+  HTML_TAG.ele('option', { name: 'FOREGROUND', value: colors.gray[5] })
   HTML_TAG.ele('option', { name: 'BACKGROUND', value: background })
 
   const HTML_TAG_NAME = attributesElement.ele('option', { name: 'HTML_TAG_NAME' }).ele('value')
-  HTML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
+  HTML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: v('keyword') })
   const HTML_CUSTOM_TAG_NAME = attributesElement.ele('option', { name: 'HTML_CUSTOM_TAG_NAME' }).ele('value')
-  HTML_CUSTOM_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  HTML_CUSTOM_TAG_NAME.ele('option', { name: 'FOREGROUND', value: v('variable') })
 
   // <option name="XML_ATTRIBUTE_NAME" baseAttributes="DEFAULT_ATTRIBUTE" />
   attributesElement.ele('option', { name: 'XML_ATTRIBUTE_NAME', baseAttributes: 'DEFAULT_ATTRIBUTE' })
@@ -358,7 +337,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const XML_TAG = attributesElement.ele('option', { name: 'XML_TAG' }).ele('value')
-  XML_TAG.ele('option', { name: 'FOREGROUND', value: primer.gray[5] })
+  XML_TAG.ele('option', { name: 'FOREGROUND', value: colors.gray[5] })
   XML_TAG.ele('option', { name: 'BACKGROUND', value: background })
   // <option name="XML_TAG_NAME">
   //   <value>
@@ -366,7 +345,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const XML_TAG_NAME = attributesElement.ele('option', { name: 'XML_TAG_NAME' }).ele('value')
-  XML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('keyword') })
+  XML_TAG_NAME.ele('option', { name: 'FOREGROUND', value: v('keyword') })
 
   // <option name="JS.GLOBAL_FUNCTION" baseAttributes="DEFAULT_FUNCTION_DECLARATION" />
   // <option name="JS.GLOBAL_VARIABLE" baseAttributes="DEFAULT_GLOBAL_VARIABLE" />
@@ -393,11 +372,11 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // <option name="JS.INSTANCE_MEMBER_FUNCTION" baseAttributes="DEFAULT_INSTANCE_METHOD" />
 
   const JS_MODULE_NAME = attributesElement.ele('option', { name: 'JS.MODULE_NAME' }).ele('value')
-  JS_MODULE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('namespace') })
+  JS_MODULE_NAME.ele('option', { name: 'FOREGROUND', value: v('namespace') })
   const JS_PRIMITIVE_TYPE = attributesElement.ele('option', { name: 'JS.PRIMITIVE.TYPE' }).ele('value')
-  JS_PRIMITIVE_TYPE.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
+  JS_PRIMITIVE_TYPE.ele('option', { name: 'FOREGROUND', value: v('type') })
   const JS_TYPE_ALIAS = attributesElement.ele('option', { name: 'JS.TYPE_ALIAS' }).ele('value')
-  JS_TYPE_ALIAS.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
+  JS_TYPE_ALIAS.ele('option', { name: 'FOREGROUND', value: v('type') })
   attributesElement.ele('option', { name: 'JS.INSTANCE_MEMBER_FUNCTION', baseAttributes: 'DEFAULT_INSTANCE_METHOD' })
 
   //   <option name="JS.DOC_TYPE">
@@ -406,7 +385,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const JS_DOC_TYPE = attributesElement.ele('option', { name: 'JS.DOC_TYPE' }).ele('value')
-  JS_DOC_TYPE.ele('option', { name: 'FOREGROUND', value: vitesse('type') })
+  JS_DOC_TYPE.ele('option', { name: 'FOREGROUND', value: v('type') })
 
   // CSS.IMPORTANT : 表示 CSS !important 属性
   //   <option name="CSS.IMPORTANT">
@@ -437,8 +416,8 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //     </value>
   // </option>
   const CSS_URL = attributesElement.ele('option', { name: 'CSS.URL' }).ele('value')
-  CSS_URL.ele('option', { name: 'FOREGROUND', value: vitesse('orange') })
-  CSS_URL.ele('option', { name: 'EFFECT_COLOR', value: vitesse('orange') })
+  CSS_URL.ele('option', { name: 'FOREGROUND', value: v('orange') })
+  CSS_URL.ele('option', { name: 'EFFECT_COLOR', value: v('orange') })
   CSS_URL.ele('option', { name: 'EFFECT_TYPE', value: '1' })
 
   //   <option name="JS.BRACES">
@@ -474,9 +453,9 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   const JS_PARENTHS = attributesElement.ele('option', { name: 'JS.PARENTHS' }).ele('value')
   JS_PARENTHS.ele('option', { name: 'FOREGROUND', value: primary })
   const JS_KEYWORD = attributesElement.ele('option', { name: 'JS.KEYWORD' }).ele('value')
-  JS_KEYWORD.ele('option', { name: 'FOREGROUND', value: vitesse('builtin') })
+  JS_KEYWORD.ele('option', { name: 'FOREGROUND', value: v('builtin') })
   const JS_PARAMETER = attributesElement.ele('option', { name: 'JS.PARAMETER' }).ele('value')
-  JS_PARAMETER.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  JS_PARAMETER.ele('option', { name: 'FOREGROUND', value: v('variable') })
 
   //   <option name="CSS.ATTRIBUTE_NAME">
   //   <value>
@@ -505,15 +484,15 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const CSS_ATTRIBUTE_NAME = attributesElement.ele('option', { name: 'CSS.ATTRIBUTE_NAME' }).ele('value')
-  CSS_ATTRIBUTE_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  CSS_ATTRIBUTE_NAME.ele('option', { name: 'FOREGROUND', value: v('variable') })
   const CSS_CLASS_NAME = attributesElement.ele('option', { name: 'CSS.CLASS_NAME' }).ele('value')
-  CSS_CLASS_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  CSS_CLASS_NAME.ele('option', { name: 'FOREGROUND', value: v('variable') })
   const CSS_FUNCTION = attributesElement.ele('option', { name: 'CSS.FUNCTION' }).ele('value')
-  CSS_FUNCTION.ele('option', { name: 'FOREGROUND', value: vitesse('function') })
+  CSS_FUNCTION.ele('option', { name: 'FOREGROUND', value: v('function') })
   const CSS_PROPERTY_NAME = attributesElement.ele('option', { name: 'CSS.PROPERTY_NAME' }).ele('value')
-  CSS_PROPERTY_NAME.ele('option', { name: 'FOREGROUND', value: vitesse('property') })
+  CSS_PROPERTY_NAME.ele('option', { name: 'FOREGROUND', value: v('property') })
   const CSS_PSEUDO = attributesElement.ele('option', { name: 'CSS.PSEUDO' }).ele('value')
-  CSS_PSEUDO.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  CSS_PSEUDO.ele('option', { name: 'FOREGROUND', value: v('variable') })
 
   //   <option name="CSS.BRACES">
   //   <value>
@@ -537,13 +516,13 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
 
   const CSS_BRACES = attributesElement.ele('option', { name: 'CSS.BRACES' }).ele('value')
-  CSS_BRACES.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  CSS_BRACES.ele('option', { name: 'FOREGROUND', value: v('blue') })
   const CSS_BRACKETS = attributesElement.ele('option', { name: 'CSS.BRACKETS' }).ele('value')
-  CSS_BRACKETS.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  CSS_BRACKETS.ele('option', { name: 'FOREGROUND', value: v('blue') })
   const CSS_PARENTHS = attributesElement.ele('option', { name: 'CSS.PARENTHESES' }).ele('value')
-  CSS_PARENTHS.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  CSS_PARENTHS.ele('option', { name: 'FOREGROUND', value: v('blue') })
   const CSS_COLON = attributesElement.ele('option', { name: 'CSS.COLON' }).ele('value')
-  CSS_COLON.ele('option', { name: 'FOREGROUND', value: vitesse('punctuation') })
+  CSS_COLON.ele('option', { name: 'FOREGROUND', value: v('punctuation') })
 
   //   <option name="KOTLIN_MUTABLE_VARIABLE">
   //   <value>
@@ -552,7 +531,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const KOTLIN_MUTABLE_VARIABLE = attributesElement.ele('option', { name: 'KOTLIN_MUTABLE_VARIABLE' }).ele('value')
-  KOTLIN_MUTABLE_VARIABLE.ele('option', { name: 'FOREGROUND', value: vitesse('variable') })
+  KOTLIN_MUTABLE_VARIABLE.ele('option', { name: 'FOREGROUND', value: v('variable') })
 
   //   <option name="TODO_DEFAULT_ATTRIBUTES">
   //   <value>
@@ -562,9 +541,9 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const TODO_DEFAULT_ATTRIBUTES = attributesElement.ele('option', { name: 'TODO_DEFAULT_ATTRIBUTES' }).ele('value')
-  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: vitesse('green') })
+  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: v('green') })
   TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FONT_TYPE', value: '3' })
-  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: vitesse('green') })
+  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: v('green') })
 
   //   <option name="CTRL_CLICKABLE">
   //   <value>
@@ -574,8 +553,8 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const CTRL_CLICKABLE = attributesElement.ele('option', { name: 'CTRL_CLICKABLE' }).ele('value')
-  CTRL_CLICKABLE.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
-  CTRL_CLICKABLE.ele('option', { name: 'EFFECT_COLOR', value: vitesse('blue') })
+  CTRL_CLICKABLE.ele('option', { name: 'FOREGROUND', value: v('blue') })
+  CTRL_CLICKABLE.ele('option', { name: 'EFFECT_COLOR', value: v('blue') })
   CTRL_CLICKABLE.ele('option', { name: 'EFFECT_TYPE', value: '1' })
   //   <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
   //   <value>
@@ -586,9 +565,9 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const FOLLOWED_HYPERLINK_ATTRIBUTES = attributesElement.ele('option', { name: 'FOLLOWED_HYPERLINK_ATTRIBUTES' }).ele('value')
-  FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
+  FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: v('blue') })
   FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'BACKGROUND' })
-  FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: vitesse('blue') })
+  FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: v('blue') })
   FOLLOWED_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '1' })
   //   <option name="HYPERLINK_ATTRIBUTES">
   //   <value>
@@ -599,8 +578,8 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   // </option>
 
   const HYPERLINK_ATTRIBUTES = attributesElement.ele('option', { name: 'HYPERLINK_ATTRIBUTES' }).ele('value')
-  HYPERLINK_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: vitesse('blue') })
-  HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: vitesse('blue') })
+  HYPERLINK_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: v('blue') })
+  HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: v('blue') })
   HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '1' })
 
   //   <option name="INACTIVE_HYPERLINK_ATTRIBUTES">
@@ -610,7 +589,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   //   </value>
   // </option>
   const INACTIVE_HYPERLINK_ATTRIBUTES = attributesElement.ele('option', { name: 'INACTIVE_HYPERLINK_ATTRIBUTES' }).ele('value')
-  INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: vitesse('comment') })
+  INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_COLOR', value: v('comment') })
   INACTIVE_HYPERLINK_ATTRIBUTES.ele('option', { name: 'EFFECT_TYPE', value: '1' })
 
   // inline parameter hint
@@ -636,36 +615,36 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
   return {
     editorTheme: theme.end({ pretty: true }),
     UITheme: {
-      name,
-      dark: style === 'dark',
-      editorScheme,
+      name:options.name,
+      dark: options.color === 'dark',
+      editorScheme:options.editorScheme,
       author: pkg.author,
       ui: {
         '*': {
           foreground,
           background,
           borderColor: border,
-          disabledText: vitesse('comment'),
-          disabledForeground: vitesse('comment'),
+          disabledText: v('comment'),
+          disabledForeground: v('comment'),
           disabledBackground: background,
           inactiveForeground: foreground,
 
           lightSelectionBackground: activeBackground,
           hoverBackground: activeBackground,
 
-          selectionBackground: activeBackground,
           selectionForeground: foreground,
+          selectionBackground: selectionBackground2,
           selectionInactiveForeground: foreground,
-          selectionInactiveBackground: activeBackground,
+          selectionInactiveBackground: selectionBackground2,
 
-          focusColor: vitesse('primary', '80'),
+          focusColor: v('primary', '80'),
 
-          infoForeground: vitesse('comment'),
+          infoForeground: v('comment'),
 
           primaryText: primary,
         },
         'Component': {
-          borderColor: pick({ light: primer.gray[3], dark: primer.gray[1] }),
+          borderColor: pick({ light: colors.gray[3], dark: colors.gray[1] }),
         },
         'Button': {
           foreground,
@@ -766,8 +745,8 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
         },
         'ProgressBar': {
           progressColor: primary,
-          indeterminateStartColor: vitesse('primary', '80'),
-          indeterminateEndColor: vitesse('primary', '40'),
+          indeterminateStartColor: v('primary', '80'),
+          indeterminateEndColor: v('primary', '40'),
           // passedColor: 'Green5',
           // passedEndColor: 'Green8',
           // failedColor: 'Red5',
@@ -830,7 +809,7 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
         },
         'FileColor': {
           Yellow: background,
-          Green: vitesse('green', '10'),
+          Green: v('green', '10'),
         // Blue: '#00004D',
         // Violet: '#471747',
         // Orange: '#733000',
@@ -839,34 +818,34 @@ export default function getEditorSchemeTheme({ style, name, soft = false, black 
         },
         'icons': {
           ColorPalette: {
-            'Actions.Grey': pick({ light: primer.gray[3], dark: primer.gray[1] }),
-            'Actions.Red': vitesse('red'),
-            'Actions.Yellow': vitesse('yellow'),
-            'Actions.Green': vitesse('green'),
-            'Actions.Blue': vitesse('blue'),
+            'Actions.Grey': pick({ light: colors.gray[3], dark: colors.gray[1] }),
+            'Actions.Red': v('red'),
+            'Actions.Yellow': v('yellow'),
+            'Actions.Green': v('green'),
+            'Actions.Blue': v('blue'),
             // 'Actions.GreyInline.Dark': '#9f99bfb3',
 
             // 'Objects.Grey': '#9790ad',
             // 'Objects.RedStatus': '#dd3962',
-            'Objects.Red': vitesse('red'),
-            'Objects.Pink': vitesse('magenta'),
-            'Objects.Yellow': vitesse('yellow'),
-            'Objects.Green': vitesse('green'),
-            'Objects.Blue': vitesse('blue'),
+            'Objects.Red': v('red'),
+            'Objects.Pink': v('magenta'),
+            'Objects.Yellow': v('yellow'),
+            'Objects.Green': v('green'),
+            'Objects.Blue': v('blue'),
             // 'Objects.Purple': '#af71e0',
             // 'Objects.BlackText': '#000000ff',
             // 'Objects.YellowDark': '#988c26',
             // 'Objects.GreenAndroid': '#78c257',
 
-            [`Checkbox.Background.Default${style === 'dark' ? '.Dark' : ''}`]: background,
-            [`Checkbox.Border.Default${style === 'dark' ? '.Dark' : ''}`]: pick({ light: primer.gray[3], dark: primer.gray[1] }),
-            [`Checkbox.Foreground.Selected${style === 'dark' ? '.Dark' : ''}`]: foreground,
-            [`Checkbox.Focus.Wide${style === 'dark' ? '.Dark' : ''}`]: vitesse('primary', '80'),
-            [`Checkbox.Focus.Thin.Default${style === 'dark' ? '.Dark' : ''}`]: primary,
-            [`Checkbox.Focus.Thin.Selected${style === 'dark' ? '.Dark' : ''}`]: primary,
-            [`Checkbox.Background.Disabled${style === 'dark' ? '.Dark' : ''}`]: vitesse('comment'),
-            [`Checkbox.Border.Disabled${style === 'dark' ? '.Dark' : ''}`]: pick({ light: primer.gray[3], dark: primer.gray[1] }),
-            [`Checkbox.Foreground.Disabled${style === 'dark' ? '.Dark' : ''}`]: foreground,
+            [`Checkbox.Background.Default${options.color === 'dark' ? '.Dark' : ''}`]: background,
+            [`Checkbox.Border.Default${options.color === 'dark' ? '.Dark' : ''}`]: pick({ light: colors.gray[3], dark: colors.gray[1] }),
+            [`Checkbox.Foreground.Selected${options.color === 'dark' ? '.Dark' : ''}`]: foreground,
+            [`Checkbox.Focus.Wide${options.color === 'dark' ? '.Dark' : ''}`]: v('primary', '80'),
+            [`Checkbox.Focus.Thin.Default${options.color === 'dark' ? '.Dark' : ''}`]: primary,
+            [`Checkbox.Focus.Thin.Selected${options.color === 'dark' ? '.Dark' : ''}`]: primary,
+            [`Checkbox.Background.Disabled${options.color === 'dark' ? '.Dark' : ''}`]: v('comment'),
+            [`Checkbox.Border.Disabled${options.color === 'dark' ? '.Dark' : ''}`]: pick({ light: colors.gray[3], dark: colors.gray[1] }),
+            [`Checkbox.Foreground.Disabled${options.color === 'dark' ? '.Dark' : ''}`]: foreground,
             // "Checkbox.Border.Default": "Grey8",
             // "Checkbox.Background.Selected": "Blue4",
             // "Checkbox.Border.Selected": "Blue4",

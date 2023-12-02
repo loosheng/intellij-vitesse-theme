@@ -3,7 +3,7 @@
   <colors>
     <option name="ADDED_LINES_COLOR" value="#4d9375"/>
     <option name="GUTTER_BACKGROUND" value="#000000"/>
-    <option name="SELECTION_BACKGROUND" value="#666666"/>
+    <option name="SELECTION_BACKGROUND" value="#383838"/>
     <option name="SELECTION_FOREGROUND"/>
     <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="#dedcd550"/>
     <option name="ANNOTATIONS_COLOR" value="#758575dd"/>
@@ -12,7 +12,7 @@
     <option name="CARET_ROW_COLOR" value="#121212"/>
     <option name="CONSOLE_BACKGROUND_KEY" value="#000000"/>
     <option name="DELETED_LINES_COLOR" value="#cb7676"/>
-    <option name="DIFF_SEPARATORS_BACKGROUND" value="#181818"/>
+    <option name="DIFF_SEPARATORS_BACKGROUND" value="#121212"/>
     <option name="DOCUMENTATION_COLOR" value="#000000"/>
     <option name="DOC_COMMENT_GUIDE" value="#758575dd"/>
     <option name="DOC_COMMENT_LINK" value="#758575dd"/>
@@ -73,8 +73,8 @@
     <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA"/>
     <option name="BREADCRUMBS_CURRENT">
       <value>
-        <option name="FOREGROUND" value="#dbd7caee"/>
-        <option name="BACKGROUND" value="#181818"/>
+        <option name="FOREGROUND" value="#dbd7cacc"/>
+        <option name="BACKGROUND" value="#121212"/>
       </value>
     </option>
     <option name="BREADCRUMBS_DEFAULT">
@@ -84,7 +84,7 @@
     </option>
     <option name="BREADCRUMBS_HOVERED">
       <value>
-        <option name="FOREGROUND" value="#dbd7caee"/>
+        <option name="FOREGROUND" value="#dbd7cacc"/>
       </value>
     </option>
     <option name="BREADCRUMBS_INACTIVE">
@@ -115,17 +115,17 @@
     </option>
     <option name="DEFAULT_DOT">
       <value>
-        <option name="FOREGROUND" value="#666666"/>
+        <option name="FOREGROUND" value="#444444"/>
       </value>
     </option>
     <option name="DEFAULT_COMMA">
       <value>
-        <option name="FOREGROUND" value="#666666"/>
+        <option name="FOREGROUND" value="#444444"/>
       </value>
     </option>
     <option name="DEFAULT_SEMICOLON">
       <value>
-        <option name="FOREGROUND" value="#666666"/>
+        <option name="FOREGROUND" value="#444444"/>
       </value>
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
@@ -411,7 +411,7 @@
     </option>
     <option name="CSS.COLON">
       <value>
-        <option name="FOREGROUND" value="#666666"/>
+        <option name="FOREGROUND" value="#444444"/>
       </value>
     </option>
     <option name="KOTLIN_MUTABLE_VARIABLE">
@@ -456,19 +456,19 @@
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
-        <option name="FOREGROUND" value="#666666cc"/>
+        <option name="FOREGROUND" value="#444444"/>
         <option name="BACKGROUND" value="#00000000"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
       <value>
-        <option name="FOREGROUND" value="#666666cc"/>
+        <option name="FOREGROUND" value="#444444"/>
         <option name="BACKGROUND" value="#00000000"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
-        <option name="FOREGROUND" value="#666666cc"/>
+        <option name="FOREGROUND" value="#444444"/>
         <option name="BACKGROUND" value="#00000000"/>
       </value>
     </option>

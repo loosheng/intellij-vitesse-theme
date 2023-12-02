@@ -14,10 +14,10 @@
       "inactiveForeground": "#dbd7caee",
       "lightSelectionBackground": "#292929",
       "hoverBackground": "#292929",
-      "selectionBackground": "#292929",
       "selectionForeground": "#dbd7caee",
+      "selectionBackground": "#383838",
       "selectionInactiveForeground": "#dbd7caee",
-      "selectionInactiveBackground": "#292929",
+      "selectionInactiveBackground": "#383838",
       "focusColor": "#4d937580",
       "infoForeground": "#758575dd",
       "primaryText": "#4d9375"
@@ -121,7 +121,7 @@
       "progressColor": "#4d9375",
       "indeterminateStartColor": "#4d937580",
       "indeterminateEndColor": "#4d937540",
-      "trackColor": "#eeeeee15"
+      "trackColor": "#22222215"
     },
     "Panel": {
       "foreground": "#dbd7caee",
@@ -139,7 +139,7 @@
     "MenuItem": {
       "background": "#222222",
       "foreground": "#dbd7caee",
-      "selectionBackground": "#eeeeee15",
+      "selectionBackground": "#22222215",
       "selectionForeground": "#dbd7caee"
     },
     "CheckBox": {
