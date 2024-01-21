@@ -1,6 +1,7 @@
 import builder from 'xmlbuilder'
 import pkg from '../package.json'
 import {createThemeHelpers, GetThemeOptions} from "./helper";
+import {FONT_TYPE} from "./constant";
 
 export default function getEditorSchemeTheme(options: GetThemeOptions) {
   // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
@@ -260,7 +261,7 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
 
   const DEFAULT_ENTITY = attributesElement.ele('option', { name: 'DEFAULT_ENTITY' }).ele('value')
   DEFAULT_ENTITY.ele('option', { name: 'FOREGROUND', value: primary })
-  DEFAULT_ENTITY.ele('option', { name: 'FONT_TYPE', value: '1' })
+  DEFAULT_ENTITY.ele('option', { name: 'FONT_TYPE', value: FONT_TYPE.BOLD })
 
   // eg: const a = new A() a.foo
   //                          ^
@@ -295,7 +296,7 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
   const DEFAULT_INVALID_STRING_ESCAPE = attributesElement.ele('option', { name: 'DEFAULT_INVALID_STRING_ESCAPE' }).ele('value')
   DEFAULT_INVALID_STRING_ESCAPE.ele('option', { name: 'FOREGROUND', value: v('comment') })
   DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_COLOR', value: v('red') })
-  DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_TYPE', value: '2' })
+  DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_TYPE', value: FONT_TYPE.ITALIC })
 
   const DEFAULT_LOCAL_VARIABLE = attributesElement.ele('option', { name: 'DEFAULT_LOCAL_VARIABLE' }).ele('value')
   DEFAULT_LOCAL_VARIABLE.ele('option', { name: 'FOREGROUND', value: v('variable') })
@@ -307,7 +308,7 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
 
   const BAD_CHARACTER = attributesElement.ele('option', { name: 'BAD_CHARACTER' }).ele('value')
   BAD_CHARACTER.ele('option', { name: 'EFFECT_COLOR', value: v('red') })
-  BAD_CHARACTER.ele('option', { name: 'EFFECT_TYPE', value: '2' })
+  BAD_CHARACTER.ele('option', { name: 'EFFECT_TYPE', value: FONT_TYPE.ITALIC })
 
   const DEFAULT_OPERATION_SIGN = attributesElement.ele('option', { name: 'DEFAULT_OPERATION_SIGN' }).ele('value')
   DEFAULT_OPERATION_SIGN.ele('option', { name: 'FOREGROUND', value: v('operator') })
@@ -397,7 +398,7 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
 
   const CSS_IMPORTANT = attributesElement.ele('option', { name: 'CSS.IMPORTANT' }).ele('value')
   CSS_IMPORTANT.ele('option', { name: 'FOREGROUND', value: primary })
-  CSS_IMPORTANT.ele('option', { name: 'FONT_TYPE', value: '1' })
+  CSS_IMPORTANT.ele('option', { name: 'FONT_TYPE', value: FONT_TYPE.BOLD })
 
   // 编辑器中代码镜头（Code Lens）边框颜色
   // <option name="CODE_LENS_BORDER_COLOR">
@@ -542,7 +543,7 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
   // </option>
   const TODO_DEFAULT_ATTRIBUTES = attributesElement.ele('option', { name: 'TODO_DEFAULT_ATTRIBUTES' }).ele('value')
   TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: v('green') })
-  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FONT_TYPE', value: '3' })
+  TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'FONT_TYPE', value: FONT_TYPE.BOLD })
   TODO_DEFAULT_ATTRIBUTES.ele('option', { name: 'ERROR_STRIPE_COLOR', value: v('green') })
 
   //   <option name="CTRL_CLICKABLE">
