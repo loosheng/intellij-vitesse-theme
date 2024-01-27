@@ -293,6 +293,20 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
   TEXT_SEARCH_RESULT_ATTRIBUTES.ele('option', { name: 'BACKGROUND', value: pick({ light: '#e6cc7766', dark: '#e6cc7744' }) })
   // TEXT_SEARCH_RESULT_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: foreground })
 
+  const DEFAULT_LABEL = attributesElement.ele('option', { name: 'DEFAULT_LABEL' }).ele('value')
+  DEFAULT_LABEL.ele('option', { name: 'FOREGROUND', value: v('function') })
+  DEFAULT_LABEL.ele('option', { name: 'FONT_TYPE', value: FONT_TYPE.BOLD })
+
+  // JAVA
+  attributesElement.ele('option', { name: 'INSTANCE_FIELD_ATTRIBUTES', baseAttributes: 'DEFAULT_INSTANCE_FIELD' })
+
+  const STATIC_FIELD_ATTRIBUTES = attributesElement.ele('option', { name: 'STATIC_FIELD_ATTRIBUTES' }).ele('value')
+  STATIC_FIELD_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: v('property') })
+
+  const STATIC_FINAL_FIELD_ATTRIBUTES = attributesElement.ele('option', { name: 'STATIC_FINAL_FIELD_ATTRIBUTES' }).ele('value')
+  STATIC_FINAL_FIELD_ATTRIBUTES.ele('option', { name: 'FOREGROUND', value: v('property') })
+  STATIC_FINAL_FIELD_ATTRIBUTES.ele('option', { name: 'FONT_TYPE', value: FONT_TYPE.BOTH })
+
   const DEFAULT_INVALID_STRING_ESCAPE = attributesElement.ele('option', { name: 'DEFAULT_INVALID_STRING_ESCAPE' }).ele('value')
   DEFAULT_INVALID_STRING_ESCAPE.ele('option', { name: 'FOREGROUND', value: v('comment') })
   DEFAULT_INVALID_STRING_ESCAPE.element('option', { name: 'EFFECT_COLOR', value: v('red') })
