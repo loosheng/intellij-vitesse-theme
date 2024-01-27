@@ -422,7 +422,7 @@
     <option name="TODO_DEFAULT_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="#4d9375"/>
-        <option name="FONT_TYPE" value="3"/>
+        <option name="FONT_TYPE" value="1"/>
         <option name="ERROR_STRIPE_COLOR" value="#4d9375"/>
       </value>
     </option>
@@ -457,23 +457,23 @@
     <option name="INLINE_PARAMETER_HINT">
       <value>
         <option name="FOREGROUND" value="#666666"/>
-        <option name="BACKGROUND" value="#00000000"/>
+        <option name="BACKGROUND" value="#181818"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
       <value>
         <option name="FOREGROUND" value="#666666"/>
-        <option name="BACKGROUND" value="#00000000"/>
+        <option name="BACKGROUND" value="#181818"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
         <option name="FOREGROUND" value="#666666"/>
-        <option name="BACKGROUND" value="#00000000"/>
+        <option name="BACKGROUND" value="#181818"/>
       </value>
     </option>
-    <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="#00000000"/>
-    <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="#00000000"/>
-    <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="#00000000"/>
+    <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="#181818"/>
+    <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="#181818"/>
+    <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="#181818"/>
   </attributes>
 </scheme>

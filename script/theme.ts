@@ -596,22 +596,22 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
   // inline parameter hint
   const INLINE_PARAMETER_HINT = attributesElement.ele('option', { name: 'INLINE_PARAMETER_HINT' }).ele('value')
   INLINE_PARAMETER_HINT.ele('option', { name: 'FOREGROUND', value: punctuation })
-  INLINE_PARAMETER_HINT.ele('option', { name: 'BACKGROUND', value: '#00000000' })
+  INLINE_PARAMETER_HINT.ele('option', { name: 'BACKGROUND', value: activeBackground })
 
   const INLINE_PARAMETER_HINT_CURRENT = attributesElement.ele('option', { name: 'INLINE_PARAMETER_HINT_CURRENT' }).ele('value')
   INLINE_PARAMETER_HINT_CURRENT.ele('option', { name: 'FOREGROUND', value: punctuation })
-  INLINE_PARAMETER_HINT_CURRENT.ele('option', { name: 'BACKGROUND', value: '#00000000' })
+  INLINE_PARAMETER_HINT_CURRENT.ele('option', { name: 'BACKGROUND', value: activeBackground })
 
   const INLINE_PARAMETER_HINT_HIGHLIGHTED = attributesElement.ele('option', { name: 'INLINE_PARAMETER_HINT_HIGHLIGHTED' }).ele('value')
   INLINE_PARAMETER_HINT_HIGHLIGHTED.ele('option', { name: 'FOREGROUND', value: punctuation })
-  INLINE_PARAMETER_HINT_HIGHLIGHTED.ele('option', { name: 'BACKGROUND', value: '#00000000' })
+  INLINE_PARAMETER_HINT_HIGHLIGHTED.ele('option', { name: 'BACKGROUND', value: activeBackground })
 
   // <option name="INLINE_REFACTORING_SETTINGS_DEFAULT" value="ad1010" />
   // <option name="INLINE_REFACTORING_SETTINGS_FOCUSED" value="ad1010" />
   // <option name="INLINE_REFACTORING_SETTINGS_HOVERED" value="ad1010" />
-  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_DEFAULT', value: '#00000000' })
-  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_FOCUSED', value: '#00000000' })
-  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_HOVERED', value: '#00000000' })
+  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_DEFAULT', value: activeBackground })
+  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_FOCUSED', value: activeBackground })
+  attributesElement.ele('option', { name: 'INLINE_REFACTORING_SETTINGS_HOVERED', value: activeBackground })
 
   return {
     editorTheme: theme.end({ pretty: true }),
