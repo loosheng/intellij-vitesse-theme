@@ -15,9 +15,9 @@
       "lightSelectionBackground": "#121212",
       "hoverBackground": "#121212",
       "selectionForeground": "#dbd7cacc",
-      "selectionBackground": "#383838",
+      "selectionBackground": "#22222215",
       "selectionInactiveForeground": "#dbd7cacc",
-      "selectionInactiveBackground": "#383838",
+      "selectionInactiveBackground": "#22222215",
       "focusColor": "#4d937580",
       "infoForeground": "#758575dd",
       "primaryText": "#4d9375"

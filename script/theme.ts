@@ -648,9 +648,9 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
           hoverBackground: activeBackground,
 
           selectionForeground: foreground,
-          selectionBackground: selectionBackground2,
+          selectionBackground: selectionBackground,
           selectionInactiveForeground: foreground,
-          selectionInactiveBackground: selectionBackground2,
+          selectionInactiveBackground: selectionBackground,
 
           focusColor: v('primary', '80'),
 
