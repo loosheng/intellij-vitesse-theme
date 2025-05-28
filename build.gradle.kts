@@ -27,7 +27,13 @@ repositories {
 
 // Set the JVM language level used to build the project. Use Java 11 for 2020.3+, and Java 17 for 2022.2+.
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
+}
+
+// Set Java compatibility
+tasks.withType<JavaCompile> {
+    sourceCompatibility = JavaVersion.VERSION_17.toString()
+    targetCompatibility = JavaVersion.VERSION_17.toString()
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
@@ -35,8 +41,21 @@ intellij {
     pluginName.set(properties("pluginName"))
     version.set(properties("platformVersion"))
     type.set(properties("platformType"))
-
-    // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
+    
+    // Disable buildSearchableOptions for theme plugins
+    tasks.buildSearchableOptions {
+        enabled = false
+    }
+    
+    // Disable runVerifier for theme plugins
+    tasks.runIde {
+        systemProperty("idea.is.internal", "false")
+    }
+    
+    // Set sandbox directory to avoid permission issues
+    sandboxDir.set("${rootProject.rootDir}/.sandbox")
+    
+    // Plugin Dependencies
     plugins.set(properties("platformPlugins").map { it.split(',').map(String::trim).filter(String::isNotEmpty) })
 }
 

@@ -6,10 +6,10 @@
 
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
-        <themeProvider id="com.github.loosheng.intellij-vitesse.light" path="/themes/vitesse.light.theme.json" />
-        <themeProvider id="com.github.loosheng.intellij-vitesse.light.soft" path="/themes/vitesse.light.soft.theme.json" />
-        <themeProvider id="com.github.loosheng.intellij-vitesse.dark" path="/themes/vitesse.dark.theme.json" />
-        <themeProvider id="com.github.loosheng.intellij-vitesse.dark.soft" path="/themes/vitesse.dark.soft.theme.json" />
-        <themeProvider id="com.github.loosheng.intellij-vitesse.black" path="/themes/vitesse.black.theme.json" />
+        <themeProvider id="com.github.loosheng.intellijvitessetheme.light" path="/themes/vitesse.light.theme.json" />
+        <themeProvider id="com.github.loosheng.intellijvitessetheme.light.soft" path="/themes/vitesse.light.soft.theme.json" />
+        <themeProvider id="com.github.loosheng.intellijvitessetheme.dark" path="/themes/vitesse.dark.theme.json" />
+        <themeProvider id="com.github.loosheng.intellijvitessetheme.dark.soft" path="/themes/vitesse.dark.soft.theme.json" />
+        <themeProvider id="com.github.loosheng.intellijvitessetheme.black" path="/themes/vitesse.black.theme.json" />
     </extensions>
 </idea-plugin>
