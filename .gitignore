@@ -4,3 +4,5 @@
 build
 node_modules
 .DS_Store
+src/main/resources/themes/*.json
+src/main/resources/themes/*.xml
