@@ -122,3 +122,41 @@ tasks {
         channels.set(properties("pluginVersion").map { listOf(it.split('-').getOrElse(1) { "default" }.split('.').first()) })
     }
 }
+// npm install task
+tasks.register<Exec>("pnpmInstall") {
+    group = "build"
+    description = "Install npm dependencies"
+    workingDir = project.rootDir
+    commandLine("pnpm", "install")
+    
+    val packageJson = project.file("package.json")
+    val nodeModules = project.file("node_modules")
+    
+    onlyIf {
+        // 只在 package.json 存在且 node_modules 目录不存在时执行
+        packageJson.exists() && !nodeModules.exists()
+    }
+    
+    // 添加日志输出，方便调试
+    doFirst {
+        if (nodeModules.exists()) {
+            println("node_modules already exists, skipping pnpm install")
+        } else if (!packageJson.exists()) {
+            println("package.json not found, skipping pnpm install")
+        }
+    }
+}
+// npm run build
+val pnpmBuild = tasks.register<Exec>("pnpmBuild") {
+    group = "build"
+    description = "Run pnpm build"
+    workingDir = project.rootDir
+    commandLine("pnpm", "run", "build")
+
+    dependsOn(":pnpmInstall")
+}
+
+// npm build run before buildPlugin
+tasks.named("buildPlugin") {
+    dependsOn(pnpmBuild)
+}

@@ -1,4 +1,5 @@
 import { promises as fs } from 'node:fs'
+import path from 'node:path';
 import getTheme from './theme'
 import {GetThemeOptions} from "./helper";
 
@@ -8,7 +9,15 @@ interface ThemeBuildMeta {
   UIPath: string
 }
 
-fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
+async function ensureDirectoryExists(filePath: string) {
+  const dir = path.dirname(filePath);
+  await fs.mkdir(dir, { recursive: true });
+}
+
+async function buildThemes() {
+  try {
+    const themesDir = path.resolve(__dirname, '../src/main/resources/themes');
+    await fs.mkdir(themesDir, { recursive: true });
   const VitesseThemes: ThemeBuildMeta[] = [
     {
       base: {
@@ -56,20 +65,42 @@ fs.mkdir('../src/main/resources/themes', { recursive: true }).then(() => {
 
   ]
 
-  const promises = VitesseThemes.flatMap((theme) => {
-    const { base, editorThemePath, UIPath } = theme
+    const promises = [];
+    
+    for (const theme of VitesseThemes) {
+      const { base, editorThemePath, UIPath } = theme;
+      const fullEditorThemePath = path.resolve(__dirname, '..', editorThemePath);
+      const fullUIThemePath = path.resolve(__dirname, '..', UIPath);
 
-    const { editorTheme, UITheme } = getTheme({ ...base, editorScheme: editorThemePath.replace('./src/main/resources', '') })
+      // Ensure directories exist
+      await ensureDirectoryExists(fullEditorThemePath);
+      await ensureDirectoryExists(fullUIThemePath);
 
-    return [
-      fs.writeFile(editorThemePath, editorTheme, 'utf-8'),
-      fs.writeFile(UIPath, `${JSON.stringify(UITheme, null, 2)}\n`, 'utf-8'),
-    ]
-  })
+      const { editorTheme, UITheme } = getTheme({ 
+        ...base, 
+        editorScheme: editorThemePath.replace('./src/main/resources', '') 
+      });
 
-  return Promise.all(promises)
-})
-  .catch((e) => {
-    console.error(e)
-    process.exit(1)
-  })
+      promises.push(
+        fs.writeFile(fullEditorThemePath, editorTheme, 'utf-8').then(() => {
+          console.log(`Generated: ${editorThemePath}`);
+        }),
+        fs.writeFile(fullUIThemePath, `${JSON.stringify(UITheme, null, 2)}\n`, 'utf-8').then(() => {
+          console.log(`Generated: ${UIPath}`);
+        })
+      );
+    }
+
+    await Promise.all(promises);
+    console.log('All theme files generated successfully!');
+  } catch (e) {
+    console.error('Error generating theme files:', e);
+    process.exit(1);
+  }
+}
+
+// Run the build
+buildThemes().catch(e => {
+  console.error('Unhandled error in build process:', e);
+  process.exit(1);
+});

@@ -20,19 +20,23 @@ jobs:
 
       # Check out current repository
       - name: Fetch Sources
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.release.tag_name }}
 
+      # Setup pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 7
       # Setup node
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
-      - run: npm i -g pnpm@7.26.3 @antfu/ni
-      - run: nci
-      - run: nr build
-
+          node-version: 16
+          cache: 'pnpm'
+      # Setup Gradle
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
       # Setup Java 11 environment for the next steps
       - name: Setup Java
         uses: actions/setup-java@v3
