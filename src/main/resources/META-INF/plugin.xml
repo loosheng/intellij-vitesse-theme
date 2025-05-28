@@ -4,7 +4,7 @@
     <name>Vitesse Theme</name>
     <vendor>LooSheng</vendor>
 
-    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
         <themeProvider id="com.github.loosheng.intellij-vitesse.light" path="/themes/vitesse.light.theme.json" />
         <themeProvider id="com.github.loosheng.intellij-vitesse.light.soft" path="/themes/vitesse.light.soft.theme.json" />
