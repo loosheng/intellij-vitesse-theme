@@ -51,6 +51,32 @@ vscode-theme-vitesse</a></h3>
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ---
+## Development
+
+1. Install dependencies
+
+```bash
+# Install script dependencies
+pnpm install
+
+# Install Java Dependencies or open in intellij IDEA (auto index)
+# gradlew manual install dependencies
+./gradlew dependencies
+
+```
+
+2. start dev script
+
+```bash
+  pnpm run dev
+```
+
+3. modify `script/*` content
+
+4. index done, start intellij IDEA run 'runIde'
+
+---
+
 ## SVG Logo Design
 
 [Vitesse Logo Design](https://mastergo.com/goto/pDDCTgJo?file=90290510852665)
