@@ -1,3 +1,4 @@
+<!-- Plugin description -->
 <h1 align="center">Intellij Vitesse Theme</h1>
 
 <p align="center">
@@ -10,11 +11,10 @@
 </a>
 </p>
 
-
-<!-- Plugin description -->
-<h3 align="center">❗❗❗In the early stage of porting</h3>
+<h3 align="center">❗In the early stage of porting</h3>
 <h3 align="center"> Ported from antfu's <a href="https://github.com/antfu/vscode-theme-vitesse">
 vscode-theme-vitesse</a></h3>
+
 <!-- Plugin description end -->
 
 ## Screenshots
