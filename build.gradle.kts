@@ -142,11 +142,11 @@ tasks.register<Exec>("pnpmInstall") {
     val nodeModules = project.file("node_modules")
     
     onlyIf {
-        // 只在 package.json 存在且 node_modules 目录不存在时执行
+        // Execute only when the package.json exists and the node_modules directory does not exist.
         packageJson.exists() && !nodeModules.exists()
     }
     
-    // 添加日志输出，方便调试
+    // Add log output for easier debugging
     doFirst {
         if (nodeModules.exists()) {
             println("node_modules already exists, skipping pnpm install")
