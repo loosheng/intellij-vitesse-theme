@@ -7,3 +7,4 @@ node_modules
 .sandbox
 src/main/resources/themes/*.json
 src/main/resources/themes/*.xml
+/CLAUDE.md
