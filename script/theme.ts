@@ -259,6 +259,19 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
   //     ^
   attributesElement.ele('option', { name: 'DEFAULT_GLOBAL_VARIABLE' }).ele('value').ele('option', { name: 'FOREGROUND', value: v('variable') })
 
+  /**
+   *     <option name="DEFAULT_VALID_STRING_ESCAPE">
+   *       <value>
+   *         <option name="FOREGROUND" value="5757c6" />
+   *         <option name="FONT_TYPE" value="1" />
+   *       </value>
+   *     </option>
+   */
+  const DEFAULT_VALID_STRING_ESCAPE = attributesElement.ele('option', { name: 'DEFAULT_VALID_STRING_ESCAPE' }).ele('value')
+  DEFAULT_VALID_STRING_ESCAPE.ele('option', { name: 'FOREGROUND', value: v('string') })
+  DEFAULT_VALID_STRING_ESCAPE.ele('option', { name: 'FONT_TYPE', value: FONT_TYPE.BOLD })
+
+
   const DEFAULT_ENTITY = attributesElement.ele('option', { name: 'DEFAULT_ENTITY' }).ele('value')
   DEFAULT_ENTITY.ele('option', { name: 'FOREGROUND', value: primary })
   DEFAULT_ENTITY.ele('option', { name: 'FONT_TYPE', value: FONT_TYPE.BOLD })
@@ -414,7 +427,7 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
   CSS_IMPORTANT.ele('option', { name: 'FOREGROUND', value: primary })
   CSS_IMPORTANT.ele('option', { name: 'FONT_TYPE', value: FONT_TYPE.BOLD })
 
-  // 编辑器中代码镜头（Code Lens）边框颜色
+  // Code Lens border color
   // <option name="CODE_LENS_BORDER_COLOR">
   // <value>
   //   <option name="EFFECT_COLOR" value="868a91" />
@@ -422,7 +435,7 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
   // </option
   attributesElement.ele('option', { name: 'CODE_LENS_BORDER_COLOR' }).ele('value').ele('option', { name: 'EFFECT_COLOR', value: border })
 
-  // CSS.URL : 表示CSS URL的属性
+  // CSS.URL : Properties that display CSS URLs
   //   <option name="CSS.URL">
   // <value>
   //       <option name="FOREGROUND" value="c26d30" />
@@ -471,6 +484,16 @@ export default function getEditorSchemeTheme(options: GetThemeOptions) {
   JS_KEYWORD.ele('option', { name: 'FOREGROUND', value: v('builtin') })
   const JS_PARAMETER = attributesElement.ele('option', { name: 'JS.PARAMETER' }).ele('value')
   JS_PARAMETER.ele('option', { name: 'FOREGROUND', value: v('variable') })
+  /**
+   *     <option name="JS.REGEXP">
+   *       <value>
+   *         <option name="FOREGROUND" value="5050a3" />
+   *       </value>
+   *     </option>
+   *
+   */
+  const JS_REGEXP = attributesElement.ele('option', { name: 'JS.REGEXP' }).ele('value')
+  JS_REGEXP.ele('option', { name: 'FOREGROUND', value: v('regex') })
 
   //   <option name="CSS.ATTRIBUTE_NAME">
   //   <value>
