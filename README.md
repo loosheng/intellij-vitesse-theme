@@ -1,4 +1,4 @@
-<!-- Plugin description -->
+
 <h1 align="center">Intellij Vitesse Theme</h1>
 
 <p align="center">
@@ -11,7 +11,12 @@
 </a>
 </p>
 
-<h3 align="center">❗In the early stage of porting</h3>
+<!-- Plugin description -->
+
+A clean, elegant theme collection for IntelliJ-based IDEs, featuring 5 carefully crafted variants: **Vitesse Light**, **Light Soft**, **Dark**, **Dark Soft**, and **Black**. Designed with a minimalist philosophy, this theme provides excellent readability and a comfortable coding experience with balanced contrast and thoughtful color choices.
+
+Perfect for developers who appreciate clean aesthetics and clear syntax highlighting across all supported languages and file types.
+
 <h3 align="center"> Ported from antfu's <a href="https://github.com/antfu/vscode-theme-vitesse">
 vscode-theme-vitesse</a></h3>
 
