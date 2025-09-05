@@ -4,9 +4,24 @@
 
 ## [Unreleased]
 
-## [0.2.8] - 2023-12-02
-### Optimize
+## [0.2.9] - 2025-09-05
 
+### Optimize
+- Enhanced syntax highlighting for string escape sequences and regex patterns
+- Fixed UI selection background color issues
+- Improved parameter hints background color for light soft theme
+- Updated styling for LABEL, STATIC_FIELD, and STATIC_FINAL_FIELD elements
+
+### Other
+- Updated Java version to 17
+- Refactored font type definitions to use enum
+- Updated CI configuration and build system
+- Enhanced development documentation
+- fix plugin verification error
+
+## [0.2.8] - 2023-12-02
+
+### Optimize
 - Update `Inlay Hints` style
 - Better background color when UI panel is selected
 
@@ -88,7 +103,8 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.8...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.9...HEAD
+[0.2.9]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.8...v0.2.9
 [0.2.8]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.7...v0.2.8
 [0.2.7]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.5...v0.2.6
