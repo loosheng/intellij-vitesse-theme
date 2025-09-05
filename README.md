@@ -3,10 +3,10 @@
 
 <p align="center">
 <img src="https://github.com/loosheng/intellij-vitesse-theme/workflows/Build/badge.svg" alt="CI Status" />
-<a href="https://plugins.jetbrains.com/plugin/com.github.loosheng.intellijvitessetheme">
+<a href="https://plugins.jetbrains.com/plugin/21401-vitesse-theme">
 <img src="https://img.shields.io/jetbrains/plugin/v/com.github.loosheng.intellijvitessetheme.svg" alt="Intellij Vitesse Theme" />
 </a>
-<a href="https://plugins.jetbrains.com/plugin/com.github.loosheng.intellijvitessetheme">
+<a href="https://plugins.jetbrains.com/plugin/21401-vitesse-theme">
 <img src="https://img.shields.io/jetbrains/plugin/d/com.github.loosheng.intellijvitessetheme.svg" alt="Downloads" />
 </a>
 </p>
