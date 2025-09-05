@@ -165,6 +165,11 @@ val pnpmBuild = tasks.register<Exec>("pnpmBuild") {
     dependsOn(":pnpmInstall")
 }
 
+// Ensure themes are generated before resources are processed
+tasks.named("processResources") {
+    dependsOn(pnpmBuild)
+}
+
 // npm build run before buildPlugin
 tasks.named("buildPlugin") {
     dependsOn(pnpmBuild)
