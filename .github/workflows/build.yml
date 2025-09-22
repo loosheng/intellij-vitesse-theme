@@ -114,6 +114,19 @@ jobs:
       - name: Fetch Sources
         uses: actions/checkout@v4
 
+      # Setup pnpm to support Gradle pnpm tasks
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 7
+
+      # Setup Node.js so pnpm can run (align with build job)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
       # Set up Java environment for the next steps
       - name: Setup Java
         uses: actions/setup-java@v4
