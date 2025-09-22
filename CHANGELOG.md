@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+## [0.2.10] - 2025-09-22
+
+### Optimize
+- sync color form vscode-theme-vitesse，improve the contrast
+
 ## [0.2.9] - 2025-09-05
 
 ### Optimize
@@ -103,7 +108,8 @@
 ### Added
 - first release
 
-[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.9...HEAD
+[Unreleased]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.10...HEAD
+[0.2.10]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.9...v0.2.10
 [0.2.9]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.8...v0.2.9
 [0.2.8]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.7...v0.2.8
 [0.2.7]: https://github.com/loosheng/intellij-vitesse-theme/compare/v0.2.6...v0.2.7
